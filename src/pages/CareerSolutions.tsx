@@ -4,12 +4,13 @@ import {
   Briefcase, Users, GraduationCap, FileText, MessageSquare, 
   TrendingUp, Building, CheckCircle, Star, ArrowRight
 } from 'lucide-react';
+import Footer from '../components/Footer';
 
 const CareerSolutions: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative pt-48 pb-48 bg-gradient-to-br from-blue-900 to-blue-700 text-white overflow-hidden">
+      <section id='#' className="relative pt-48 pb-48 bg-gradient-to-br from-blue-900 to-blue-700 text-white overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-10 right-10 w-64 h-64 bg-blue-400/10 rounded-full blur-xl"></div>
           <div className="absolute bottom-10 left-10 w-96 h-96 bg-teal-400/10 rounded-full blur-2xl"></div>
@@ -23,8 +24,8 @@ const CareerSolutions: React.FC = () => {
               transition={{ duration: 0.6 }}
             >
               {/* Logo Space */}
-              <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center mb-8">
-                <img src='public\ELITE CAREER SOLUTIONS LOGO.jpg' alt='Logo' className="w-16 h-16 object-contain rounded-xl" />
+              <div className="w-24 h-24 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center mb-8">
+                <img src='\ELITE CAREER SOLUTIONS LOGO.jpg' alt='Logo' className="w-24 h-24 object-contain rounded-xl" />
               </div>
               
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
@@ -37,7 +38,7 @@ const CareerSolutions: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
-                  href="#services" 
+                  href="#about" 
                   className="px-8 py-4 bg-white text-blue-900 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer"
                 >
                   Our Services
@@ -69,7 +70,7 @@ const CareerSolutions: React.FC = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-50">
+      <section id="about" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -146,7 +147,7 @@ const CareerSolutions: React.FC = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[url('https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8233.jpg')] bg-cover bg-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -295,8 +296,11 @@ const CareerSolutions: React.FC = () => {
           </motion.div>
         </div>
       </section>
+      <Footer company="career" />
     </div>
+    
   );
+  
 };
 
 export default CareerSolutions;

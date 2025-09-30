@@ -4,6 +4,7 @@ import {
   Trophy, Heart, Users, Activity, Target, 
   Award, Zap, Smile, Calendar, Star
 } from 'lucide-react';
+import Footer from '../components/Footer';
 
 const SportsAcademy: React.FC = () => {
   return (
@@ -23,8 +24,8 @@ const SportsAcademy: React.FC = () => {
               transition={{ duration: 0.6 }}
             >
               {/* Logo Space */}
-              <div className="w-16 h-16 bg-gradient-to-r from-orange-600 to-yellow-600 rounded-xl flex items-center justify-center mb-8">
-                <img src='public\ELITE SPORTS.jpg' alt='Logo' className="w-16 h-16 object-contain rounded-xl" />
+              <div className="w-32 h-32 bg-gradient-to-r from-orange-600 to-yellow-600 rounded-xl flex items-center justify-center mb-8">
+                <img src='\ELITE SPORTS.jpg' alt='Logo' className="w-32 h-32 object-contain rounded-xl" />
               </div>
               
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
@@ -37,13 +38,13 @@ const SportsAcademy: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
-                  href="#programs" 
+                  href="#about" 
                   className="px-8 py-4 bg-white text-orange-800 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer"
                 >
                   Our Programs
                 </a>
                 <a 
-                  href="#enrollment" 
+                  href="#contact" 
                   className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer"
                 >
                   Enroll Now
@@ -69,7 +70,7 @@ const SportsAcademy: React.FC = () => {
       </section>
 
       {/* Programs Section */}
-      <section id="programs" className="py-20 bg-gray-50">
+      <section id="about" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -352,7 +353,7 @@ const SportsAcademy: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section id="enrollment" className="py-20 bg-gradient-to-r from-orange-600 to-yellow-600 text-white">
+      <section id="contact" className="py-20 bg-gradient-to-r from-orange-600 to-yellow-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -375,6 +376,7 @@ const SportsAcademy: React.FC = () => {
           </motion.div>
         </div>
       </section>
+      <Footer company="sports" />
     </div>
   );
 };

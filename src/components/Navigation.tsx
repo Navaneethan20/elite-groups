@@ -5,7 +5,7 @@ import { ChevronDown, Menu, X, Building2 } from 'lucide-react';
 
 const companies = [
   { name: 'Elite Career Solutions', path: '/career-solutions', color: 'text-blue-600' },
-  { name: 'Elite Digital Marketing', path: '/digital-marketing', color: 'text-purple-600' },
+  { name: 'Elite Ads & Digital marketing', path: '/digital-marketing', color: 'text-purple-600' },
   { name: 'Elite Speech & Hearing Centre', path: '/speech-hearing', color: 'text-green-600' },
   { name: 'Elite Sports Academy', path: '/sports-academy', color: 'text-orange-600' },
   { name: 'Elite Weekend Dayouts', path: '/weekend-dayouts', color: 'text-yellow-600' },
@@ -77,24 +77,32 @@ const Navigation: React.FC = () => {
               <AnimatePresence>
                 {isDropdownOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-72 bg-white/40 backdrop-blur-xl  rounded-xl shadow-xl border border-gray-100 overflow-hidden"
+                    initial={{ opacity: 0, y: -12, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -12, scale: 0.95 }}
+                    transition={{ duration: 0.22, ease: "easeOut" }}
+                    className="absolute top-full left-0 mt-2 w-64 bg-white/50 backdrop-blur-lg rounded-xl shadow-xl border border-gray-200 overflow-hidden ring-1 ring-blue-200"
                   >
                     {companies.map((company, index) => (
-                      <Link
+                      <motion.div
                         key={index}
-                        to={company.path}
-                        className="block px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-50 last:border-0"
+                        initial={{ x: -10, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ delay: 0.04 * index, duration: 0.18 }}
                       >
-                        <div className="flex items-center space-x-3">
-                          {/* Point color uses company.color */}
-                          <div className={`w-2 h-2 rounded-full ${company.color.replace('text-', 'bg-')}`} />
-                          <span className="font-medium text-gray-800 hover:text-blue-600 transition-colors">{company.name}</span>
-                        </div>
-                      </Link>
+                        <Link
+                          to={company.path}
+                          className="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-all border-b border-gray-100 last:border-0 group"
+                        >
+                          <div className={`w-2.5 h-2.5 rounded-full ${company.color.replace('text-', 'bg-')} shadow group-hover:scale-110 transition-transform`} />
+                          <span className={`font-semibold text-base ${scrolled ? 'text-black' : 'text-black'} group-hover:text-blue-600 transition-colors`}>
+                            {company.name}
+                          </span>
+                          <span className="ml-auto text-xs text-gray-400 group-hover:text-blue-400 transition-colors">
+                            &rarr;
+                          </span>
+                        </Link>
+                      </motion.div>
                     ))}
                   </motion.div>
                 )}

@@ -5,6 +5,7 @@ import {
   Users, Award, Star, ChevronRight, Phone, Mail, MapPin, 
   Briefcase, Monitor, Heart, Trophy, Calendar, ChevronDown
 } from 'lucide-react';
+import Footer from '../components/Footer';
 
 const companies = [
   {
@@ -16,7 +17,7 @@ const companies = [
     image: 'https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg'
   },
   {
-    name: 'Elite Digital Marketing',
+    name: 'Elite Ads & Digital marketing',
     description: 'Helping brands grow online with targeted strategies and creative campaigns.',
     path: '/digital-marketing',
     icon: Monitor,
@@ -53,7 +54,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-teal-700">
           <div className="absolute inset-0 bg-black/20" />
           <div className="absolute inset-0">
@@ -173,18 +174,30 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Companies Section */}
-      <section id="companies" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="companies" className="py-20 bg-white relative overflow-hidden">
+        {/* Background Video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          src="https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4" // Replace with your video URL or local path
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+        {/* Optional: Overlay for readability */}
+        <div className="absolute inset-0 bg-black/30 z-0" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Our Companies
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               Discover our diverse portfolio of specialized companies, each dedicated to excellence in their respective fields.
             </p>
           </motion.div>
@@ -198,7 +211,7 @@ const HomePage: React.FC = () => {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                  className="group bg-white/50 backdrop-blur-md rounded-2xl  shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
                 >
                   <div className="relative h-64 overflow-hidden">
                     <img 
@@ -216,7 +229,7 @@ const HomePage: React.FC = () => {
                   
                   <div className="p-8">
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">{company.name}</h3>
-                    <p className="text-gray-600 mb-6">{company.description}</p>
+                    <p className="text-black-600 mb-6">{company.description}</p>
                     <Link 
                       to={company.path}
                       className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors cursor-pointer"
@@ -265,8 +278,8 @@ const HomePage: React.FC = () => {
               {
                 name: "Maria Garcia",
                 role: "Business Owner",
-                company: "Elite Digital Marketing",
-                review: "Our online presence has grown tremendously since partnering with Elite Digital Marketing. Highly recommended!",
+                company: "Elite Ads & Digital marketing",
+                review: "Our online presence has grown tremendously since partnering with Elite Ads & Digital marketing. Highly recommended!",
                 rating: 5
               }
             ].map((review, index) => (
@@ -311,7 +324,7 @@ const HomePage: React.FC = () => {
             {[
               {
                 question: "What services does Elite Groups offer?",
-                answer: "Elite Groups offers comprehensive services through five specialized companies: career solutions, digital marketing, speech and hearing therapy, sports programs for special children, and weekend dayouts."
+                answer: "Elite Groups offers comprehensive services through five specialized companies: career solutions, Ads & Digital marketing, speech and hearing therapy, sports programs for special children, and weekend dayouts."
               },
               {
                 question: "Are the programs suitable for children with special needs?",
@@ -322,8 +335,8 @@ const HomePage: React.FC = () => {
                 answer: "You can visit our Elite Career Solutions page to learn about our services, or contact us directly to schedule a consultation for career guidance and job placement assistance."
               },
               {
-                question: "Do you provide digital marketing services for small businesses?",
-                answer: "Absolutely! Elite Digital Marketing works with businesses of all sizes, from startups to large enterprises, providing customized digital marketing solutions to help grow your online presence."
+                question: "Do you provide Ads & Digital marketing services for small businesses?",
+                answer: "Absolutely! Elite Ads & Digital marketing works with businesses of all sizes, from startups to large enterprises, providing customized Ads & Digital marketing solutions to help grow your online presence."
               }
             ].map((faq, index) => (
               <motion.details
@@ -375,7 +388,9 @@ const HomePage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold">Phone</h3>
-                  <p className="text-gray-300">+91 9876543210</p>
+                  <p className="text-gray-300">+91  <a href={`tel:${ 8122842482}`} className="text-gray-300 hover:text-white">
+                      { 8122842482}
+                    </a></p>
                 </div>
               </div>
 
@@ -396,17 +411,26 @@ const HomePage: React.FC = () => {
                 <div>
                   <h3 className="font-semibold">Address</h3>
                   <p className="text-gray-300">
-                    123 Business District,<br />
-                    Tech City, TC 12345
+                    No:10, Harini Complex 3rd Floor, Bharathidasan Street,<br />
+                     Valasaravakkam, Chennai, Tamil Nadu 600087
                   </p>
                 </div>
               </div>
 
               {/* Map */}
               <div className="mt-8">
-                <div className="w-full h-64 bg-gray-800 rounded-lg flex items-center justify-center">
-                  <p className="text-gray-400">Interactive Map Coming Soon</p>
-                </div>
+                <div className="w-full h-64 bg-gray-800 rounded-lg overflow-hidden">
+                <iframe
+                  title="Elite Groups Location"
+                  src="https://www.google.com/maps?q=No:10, Harini Complex 3rd Floor, Bharathidasan Street, Valasaravakkam, Chennai, Tamil Nadu 600087&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
               </div>
             </motion.div>
 
@@ -443,7 +467,7 @@ const HomePage: React.FC = () => {
                 <select className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 transition-colors">
                   <option value="">Select Service Interest</option>
                   <option value="career">Elite Career Solutions</option>
-                  <option value="digital">Elite Digital Marketing</option>
+                  <option value="digital">Elite Ads & Digital marketing</option>
                   <option value="speech">Elite Speech & Hearing Centre</option>
                   <option value="sports">Elite Sports Academy</option>
                   <option value="dayouts">Elite Weekend Dayouts</option>
@@ -464,6 +488,7 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+      <Footer company="career" />
     </div>
   );
 };

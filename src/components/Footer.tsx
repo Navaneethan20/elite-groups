@@ -2,7 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Building2, Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 
-const Footer: React.FC = () => {
+type CompanyKey = 'career' | 'marketing' | 'speech' | 'sports' | 'weekend';
+
+interface FooterProps {
+  company: CompanyKey;
+}
+
+const companyNumbers: Record<CompanyKey, string[]> = {
+  career: ['+91 8122842482', '+044-42697264'],
+  marketing: ['+91 8939540201'],
+  speech: ['+91 7305969724','+044-48067961'],
+  sports: ['+91 9705465342','+91 9791007729'],
+  weekend: ['+91 9705465342','+91 9791007729'],
+};
+
+const Footer: React.FC<FooterProps> = ({ company }) => {
   return (
     <footer className="bg-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -16,7 +30,7 @@ const Footer: React.FC = () => {
               <span className="text-2xl font-bold">Elite Groups</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              Transforming lives through comprehensive services spanning career solutions, digital marketing, 
+              Transforming lives through comprehensive services spanning career solutions, Ads & Digital marketing,
               therapy services, sports programs, and enriching experiences for special children.
             </p>
             <div className="flex space-x-4">
@@ -40,7 +54,7 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-6">Our Companies</h3>
             <ul className="space-y-3">
               <li><Link to="/career-solutions" className="text-gray-300 hover:text-white transition-colors">Elite Career Solutions</Link></li>
-              <li><Link to="/digital-marketing" className="text-gray-300 hover:text-white transition-colors">Elite Digital Marketing</Link></li>
+              <li><Link to="/digital-marketing" className="text-gray-300 hover:text-white transition-colors">Elite Ads & Digital marketing</Link></li>
               <li><Link to="/speech-hearing" className="text-gray-300 hover:text-white transition-colors">Elite Speech & Hearing Centre</Link></li>
               <li><Link to="/sports-academy" className="text-gray-300 hover:text-white transition-colors">Elite Sports Academy</Link></li>
               <li><Link to="/weekend-dayouts" className="text-gray-300 hover:text-white transition-colors">Elite Weekend Dayouts</Link></li>
@@ -52,8 +66,14 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-6">Contact Info</h3>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-300">+91 9876543210</span>
+                <span className="text-gray-300 space-y-4">{companyNumbers[company].map((number, idx) => (
+                  <div key={idx} className="flex items-center space-x-3 ">
+                    <Phone className="w-5 h-5 text-blue-400" />
+                    <a href={`tel:${number}`} className="text-gray-300 hover:text-white">
+                      {number}
+                    </a>
+                  </div>
+                ))}</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-blue-400" />
@@ -62,8 +82,8 @@ const Footer: React.FC = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-blue-400 mt-1" />
                 <span className="text-gray-300">
-                  123 Business District,<br />
-                  Tech City, TC 12345
+                  No:10, Harini Complex 3rd <br /> Floor, Bharathidasan Street,
+                  Valasaravakkam, Chennai,<br /> Tamil Nadu 600087
                 </span>
               </div>
             </div>

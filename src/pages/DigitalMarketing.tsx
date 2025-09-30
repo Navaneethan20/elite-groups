@@ -4,6 +4,7 @@ import {
   Monitor, Search, Facebook, Instagram, Youtube, Mail, 
   BarChart, Users, Zap, Target, TrendingUp, Smartphone
 } from 'lucide-react';
+import Footer from '../components/Footer';
 
 const DigitalMarketing: React.FC = () => {
   return (
@@ -23,12 +24,12 @@ const DigitalMarketing: React.FC = () => {
               transition={{ duration: 0.6 }}
             >
               {/* Logo Space */}
-              <div className="w-16 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center mb-8">
-                <img src='public\ELITE DM.jpg' alt='Logo' className="w-16 h-18 object-contain rounded-xl" />
+              <div className="w-32 h-18 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center mb-8">
+                <img src='\ELITE DM.jpg' alt='Logo' className="w-32 h-18 object-contain rounded-xl" />
               </div>
               
               <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                Elite Digital{' '}
+                Elite Ads & Digital{' '}
                 <span className="inline-block bg-gradient-to-br from-pink-400 to-purple-400 bg-clip-text text-transparent">
                   Marketing
                 </span>
@@ -39,7 +40,7 @@ const DigitalMarketing: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
-                  href="#services" 
+                  href="#about" 
                   className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-lg font-semibold hover:from-pink-600 hover:to-purple-600 transition-all cursor-pointer"
                 >
                   Our Services
@@ -61,7 +62,7 @@ const DigitalMarketing: React.FC = () => {
             >
               <img 
                 src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg" 
-                alt="Digital Marketing"
+                alt="Ads & Digital marketing"
                 className="w-full h-auto object-cover rounded-2xl shadow-2xl"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-purple-900/50 to-transparent rounded-2xl"></div>
@@ -71,7 +72,7 @@ const DigitalMarketing: React.FC = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-50">
+      <section id="about" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -83,7 +84,7 @@ const DigitalMarketing: React.FC = () => {
               Digital Solutions That Drive Growth
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From social media management to SEO optimization, we offer comprehensive digital marketing services.
+              From social media management to SEO optimization, we offer comprehensive Ads & Digital marketing services.
             </p>
           </motion.div>
 
@@ -172,7 +173,7 @@ const DigitalMarketing: React.FC = () => {
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Success Stories</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See how we've helped brands achieve remarkable growth through strategic digital marketing.
+              See how we've helped brands achieve remarkable growth through strategic Ads & Digital marketing.
             </p>
           </motion.div>
 
@@ -248,7 +249,7 @@ const DigitalMarketing: React.FC = () => {
           >
             <h2 className="text-4xl font-bold mb-6">Our Proven Process</h2>
             <p className="text-xl text-purple-100 max-w-3xl mx-auto">
-              A systematic approach to digital marketing that delivers consistent results.
+              A systematic approach to Ads & Digital marketing that delivers consistent results.
             </p>
           </motion.div>
 
@@ -304,7 +305,7 @@ const DigitalMarketing: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-white">
+      <section id='contact' className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -315,7 +316,7 @@ const DigitalMarketing: React.FC = () => {
               Ready to Dominate Digital?
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Let's create a digital marketing strategy that transforms your online presence and drives real business growth.
+              Let's create a Ads & Digital marketing strategy that transforms your online presence and drives real business growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all cursor-pointer">
@@ -328,6 +329,7 @@ const DigitalMarketing: React.FC = () => {
           </motion.div>
         </div>
       </section>
+      <Footer company="marketing" />
     </div>
   );
 };

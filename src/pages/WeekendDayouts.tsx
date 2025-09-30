@@ -4,6 +4,7 @@ import {
   Calendar, MapPin, Camera, Music, Palette, 
   Users, Heart, Smile, Sun, Trees, Award, Activity
 } from 'lucide-react';
+import Footer from '../components/Footer';
 
 const WeekendDayouts: React.FC = () => {
   return (
@@ -24,8 +25,8 @@ const WeekendDayouts: React.FC = () => {
               transition={{ duration: 0.6 }}
             >
               {/* Logo Space */}
-              <div className="w-16 h-14 bg-gradient-to-r from-yellow-600 to-orange-600 rounded-xl flex items-center justify-center mb-8">
-                <img src='public\ELITE DAYOUTS.jpg' alt='Logo' className="w-16 h-16 object-contain rounded-xl" />
+              <div className="w-32 h-32 bg-gradient-to-r from-yellow-600 to-orange-600 rounded-xl flex items-center justify-center mb-8">
+                <img src='\ELITE DAYOUTS.jpg' alt='Logo' className="w-32 h-32 object-contain rounded-xl" />
               </div>
               
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
@@ -38,13 +39,13 @@ const WeekendDayouts: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
-                  href="#activities" 
+                  href="#about" 
                   className="px-8 py-4 bg-white text-yellow-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer"
                 >
                   Our Activities
                 </a>
                 <a 
-                  href="#booking" 
+                  href="#contact" 
                   className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer"
                 >
                   Book Adventure
@@ -59,7 +60,7 @@ const WeekendDayouts: React.FC = () => {
               className="relative"
             >
               <img 
-                src="https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg" 
+                src="https://img.freepik.com/free-photo/kid-playing-with-paper-plane_23-2151582205.jpg" 
                 alt="Weekend Dayouts"
                 className="w-full h-96 object-cover rounded-2xl shadow-2xl"
               />
@@ -70,7 +71,7 @@ const WeekendDayouts: React.FC = () => {
       </section>
 
       {/* Activities Section */}
-      <section id="activities" className="py-20 bg-gray-50">
+      <section id="about" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -323,7 +324,7 @@ const WeekendDayouts: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              "https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg",
+              "https://img.freepik.com/free-photo/kid-playing-with-paper-plane_23-2151582205.jpg",
               "https://images.pexels.com/photos/2433353/pexels-photo-2433353.jpeg",
               "https://images.pexels.com/photos/8535320/pexels-photo-8535320.jpeg",
               "https://images.pexels.com/photos/8535310/pexels-photo-8535310.jpeg",
@@ -349,7 +350,7 @@ const WeekendDayouts: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section id="booking" className="py-20 bg-gradient-to-r from-yellow-600 to-orange-600 text-white">
+      <section id="contact" className="py-20 bg-gradient-to-r from-yellow-600 to-orange-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -372,6 +373,7 @@ const WeekendDayouts: React.FC = () => {
           </motion.div>
         </div>
       </section>
+      <Footer company="weekend" />
     </div>
   );
 };

@@ -30,7 +30,6 @@ function App() {
             <Route path="/weekend-dayouts" element={<WeekendDayouts />} />
           </Routes>
         </motion.main>
-        <Footer />
       </div>
     </Router>
   );
