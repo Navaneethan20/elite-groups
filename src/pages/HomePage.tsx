@@ -6,6 +6,7 @@ import {
   Briefcase, Monitor, Heart, Trophy, Calendar, ChevronDown
 } from 'lucide-react';
 import Footer from '../components/Footer';
+import { Typewriter } from 'react-simple-typewriter';
 
 const companies = [
   {
@@ -66,33 +67,52 @@ const HomePage: React.FC = () => {
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2.5 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              Empowering Lives Through
-              <span className="block bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
-                Excellence
-              </span>
+            <h1 
+            className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 mb-6 drop-shadow-2xl hover:drop-shadow-2xl transition-all" 
+            >
+            <Typewriter
+                words={['Empowering Lives Through Excellence', 'ELITE GROUPS']}
+                loop={Infinity}
+                cursor
+                cursorStyle="|"
+                typeSpeed={100}
+                deleteSpeed={70}
+                delaySpeed={3000}
+              />
             </h1>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 2.5 }}
+            >
+            </motion.div>
             <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
               A comprehensive ecosystem of services spanning career solutions, digital growth, 
               therapeutic care, sports development, and enriching experiences.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="#companies" 
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-teal-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all transform hover:scale-105 cursor-pointer"
-              >
-                Explore Our Companies
-              </a>
-              <a 
-                href="#contact" 
-                className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer"
-              >
-                Get In Touch
-              </a>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 2.5 }}
+            >
+            </motion.div>
+          <a
+            href="#companies"
+            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-teal-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all transform hover:scale-105 hover:shadow-lg cursor-pointer"
+          >
+            Explore Our Companies
+          </a>
+          <a
+            href="#contact"
+            className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 transform hover:scale-105 hover:shadow-lg cursor-pointer"
+          >
+            Get In Touch
+          </a>
             </div>
           </motion.div>
         </div>

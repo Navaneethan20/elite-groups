@@ -37,15 +37,21 @@ const SpeechHearing: React.FC = () => {
                 through compassionate care and evidence-based therapy.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 2.5 }}
+                >
+                </motion.div>
                 <a 
                   href="#about" 
-                  className="px-8 py-4 bg-white text-green-800 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer"
+                  className="px-8 py-4 bg-white text-green-800 rounded-lg font-semibold hover:bg-gray-100 transition-colors transition-all transform hover:scale-105 hover:shadow-lg cursor-pointerr"
                 >
                   Our Services
                 </a>
                 <a 
                   href="#contact" 
-                  className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer"
+                  className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 transform hover:scale-105 hover:shadow-lg cursor-pointer"
                 >
                   Book Assessment
                 </a>
@@ -104,10 +110,10 @@ const SpeechHearing: React.FC = () => {
               },
               {
                 icon: Brain,
-                title: "Language Development",
-                description: "Specialized programs for children facing communication and language delays.",
+                title: "Special Education in Speech and Hearing",
+                description: "Specialized education for children with speech, language, or hearing difficulties.",
                 color: "from-blue-500 to-blue-600",
-                benefits: ["Vocabulary Building", "Grammar Skills", "Social Communication", "Reading Readiness"]
+                benefits: ["Speech Development", "Language Skills", "Communication Strategies", "Academic Support"]
               },
               {
                 icon: Stethoscope,
@@ -125,10 +131,10 @@ const SpeechHearing: React.FC = () => {
               },
               {
                 icon: Activity,
-                title: "Behavioral Support",
-                description: "Specialized support for children with autism, ADHD, and learning difficulties.",
+                title: "Occupational Therapy",
+                description: "Specialized therapy to improve independence in daily living skills.",
                 color: "from-pink-500 to-pink-600",
-                benefits: ["Social Skills", "Behavior Management", "Sensory Integration", "Group Therapy"]
+                benefits: ["Fine Motor Skills", "Gross Motor Skills Management", "Sensory Processing", "Self-care & Independence"]
               }
             ].map((service, index) => {
               const IconComponent = service.icon;
