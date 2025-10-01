@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Building2, Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Building2, Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram, ChevronRight } from 'lucide-react';
 
 type CompanyKey = 'career' | 'marketing' | 'speech' | 'sports' | 'weekend';
 
@@ -11,12 +11,20 @@ interface FooterProps {
 const companyNumbers: Record<CompanyKey, string[]> = {
   career: ['+91 8122842482', '+044-42697264'],
   marketing: ['+91 8939540201'],
-  speech: ['+91 7305969724','+044-48067961'],
-  sports: ['+91 9705465342','+91 9791007729'],
-  weekend: ['+91 9705465342','+91 9791007729'],
+  speech: ['+91 7305969724', '+044-48067961'],
+  sports: ['+91 9705465342', '+91 9791007729'],
+  weekend: ['+91 9705465342', '+91 9791007729'],
 };
 
 const Footer: React.FC<FooterProps> = ({ company }) => {
+  const navigate = useNavigate();
+
+  // Navigate to a page and scroll to the top
+  const handleNavigation = (path: string) => {
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="bg-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -34,17 +42,17 @@ const Footer: React.FC<FooterProps> = ({ company }) => {
               therapy services, sports programs, and enriching experiences for special children.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors">
-                <Facebook className="w-5 h-5" />
+              <a href="#" className="w-10 h-10 bg-pink-600 rounded-lg flex items-center justify-center hover:bg-pink-700 transition-colors">
+                <Instagram className="w-5 h-5" />
               </a>
               <a href="#" className="w-10 h-10 bg-blue-400 rounded-lg flex items-center justify-center hover:bg-blue-500 transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
+              <a href="#" className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors">
+                <Facebook className="w-5 h-5" />
+              </a>
               <a href="#" className="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center hover:bg-blue-800 transition-colors">
                 <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-pink-600 rounded-lg flex items-center justify-center hover:bg-pink-700 transition-colors">
-                <Instagram className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -53,11 +61,51 @@ const Footer: React.FC<FooterProps> = ({ company }) => {
           <div>
             <h3 className="text-lg font-semibold mb-6">Our Companies</h3>
             <ul className="space-y-3">
-              <li><Link to="/career-solutions" className="text-gray-300 hover:text-white transition-colors">Elite Career Solutions</Link></li>
-              <li><Link to="/digital-marketing" className="text-gray-300 hover:text-white transition-colors">Elite Ads & Digital marketing</Link></li>
-              <li><Link to="/speech-hearing" className="text-gray-300 hover:text-white transition-colors">Elite Speech & Hearing Centre</Link></li>
-              <li><Link to="/sports-academy" className="text-gray-300 hover:text-white transition-colors">Elite Sports Academy</Link></li>
-              <li><Link to="/weekend-dayouts" className="text-gray-300 hover:text-white transition-colors">Elite Weekend Dayouts</Link></li>
+              <li className="flex items-center space-x-2">
+                <ChevronRight className="w-4 h-4 text-blue-400" />
+                <button
+                  onClick={() => handleNavigation('/career-solutions')}
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Elite Career Solutions
+                </button>
+              </li>
+              <li className="flex items-center space-x-2">
+                <ChevronRight className="w-4 h-4 text-purple-400" />
+                <button
+                  onClick={() => handleNavigation('/digital-marketing')}
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Elite Ads & Digital marketing
+                </button>
+              </li>
+              <li className="flex items-center space-x-2">
+                <ChevronRight className="w-4 h-4 text-green-400" />
+                <button
+                  onClick={() => handleNavigation('/speech-hearing')}
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Elite Speech & Hearing Centre
+                </button>
+              </li>
+              <li className="flex items-center space-x-2">
+                <ChevronRight className="w-4 h-4 text-orange-400" />
+                <button
+                  onClick={() => handleNavigation('/sports-academy')}
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Elite Sports Academy
+                </button>
+              </li>
+              <li className="flex items-center space-x-2">
+                <ChevronRight className="w-4 h-4 text-yellow-400" />
+                <button
+                  onClick={() => handleNavigation('/weekend-dayouts')}
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Elite Weekend Dayouts
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -66,14 +114,16 @@ const Footer: React.FC<FooterProps> = ({ company }) => {
             <h3 className="text-lg font-semibold mb-6">Contact Info</h3>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <span className="text-gray-300 space-y-4">{companyNumbers[company].map((number, idx) => (
-                  <div key={idx} className="flex items-center space-x-3 ">
-                    <Phone className="w-5 h-5 text-blue-400" />
-                    <a href={`tel:${number}`} className="text-gray-300 hover:text-white">
-                      {number}
-                    </a>
-                  </div>
-                ))}</span>
+                <span className="text-gray-300 space-y-4">
+                  {companyNumbers[company].map((number, idx) => (
+                    <div key={idx} className="flex items-center space-x-3">
+                      <Phone className="w-5 h-5 text-blue-400" />
+                      <a href={`tel:${number}`} className="text-gray-300 hover:text-white">
+                        {number}
+                      </a>
+                    </div>
+                  ))}
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-blue-400" />

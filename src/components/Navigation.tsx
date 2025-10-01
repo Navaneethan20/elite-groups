@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Menu, X, Building2 } from 'lucide-react';
 
@@ -16,6 +16,7 @@ const Navigation: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +25,20 @@ const Navigation: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Handle Home button and logo click
+  const handleHomeClick = () => {
+    if (location.pathname === '/') {
+      // If already on the home page, scroll to the top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Navigate to the home page and scroll to the top
+      navigate('/');
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100); // Delay to ensure navigation completes
+    }
+  };
 
   return (
     <motion.nav
@@ -37,27 +52,29 @@ const Navigation: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-
-          <Link to="/" className="flex items-center space-x-3">
+          <div
+            className="flex items-center space-x-3 cursor-pointer"
+            onClick={handleHomeClick}
+          >
             <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-teal-600 rounded-lg flex items-center justify-center">
               <Building2 className="w-6 h-6 text-white" />
             </div>
             <span className={`text-xl font-bold transition-colors ${scrolled ? 'text-black' : 'text-white'} hover:text-blue-600`}>
               Elite Groups
             </span>
-          </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link
-              to="/"
-              className={`font-bold transition-colors hover:text-blue-600 ${
+            <button
+              onClick={handleHomeClick}
+              className={`font-bold text-xl transition-colors hover:text-blue-600 ${
                 scrolled ? 'text-black' : 'text-white'
               } ${location.pathname === '/' ? 'text-blue-600' : ''}`}
             >
               Home
-            </Link>
-            <a href="#about" className={`font-bold transition-colors hover:text-blue-600 ${scrolled ? 'text-black' : 'text-white'}`}>
+            </button>
+            <a href="#about" className={`font-bold text-xl transition-colors hover:text-blue-600 ${scrolled ? 'text-black' : 'text-white'}`}>
               About
             </a>
             
@@ -67,7 +84,7 @@ const Navigation: React.FC = () => {
               onMouseEnter={() => setIsDropdownOpen(true)}
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
-              <button className={`font-bold flex items-center space-x-1 transition-colors hover:text-blue-600 ${scrolled ? 'text-black' : 'text-white'}`}>
+              <button className={`font-bold flex items-center space-x-1 text-xl transition-colors hover:text-blue-600 ${scrolled ? 'text-black' : 'text-white'}`}>
                 <span>Companies</span>
                 <ChevronDown 
                   className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} 
@@ -95,10 +112,10 @@ const Navigation: React.FC = () => {
                           className="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-all border-b border-gray-100 last:border-0 group"
                         >
                           <div className={`w-2.5 h-2.5 rounded-full ${company.color.replace('text-', 'bg-')} shadow group-hover:scale-110 transition-transform`} />
-                          <span className={`font-semibold text-base ${scrolled ? 'text-black' : 'text-black'} group-hover:text-blue-600 transition-colors`}>
+                          <span className={`font-semibold text-l ${scrolled ? 'text-black' : 'text-black'} group-hover:text-blue-600 transition-colors`}>
                             {company.name}
                           </span>
-                          <span className="ml-auto text-xs text-gray-400 group-hover:text-blue-400 transition-colors">
+                          <span className="ml-auto text-l text-gray-400 group-hover:text-blue-400 transition-colors">
                             &rarr;
                           </span>
                         </Link>
@@ -109,14 +126,14 @@ const Navigation: React.FC = () => {
               </AnimatePresence>
             </div>
 
-            <a href="#contact" className={`font-bold transition-colors hover:text-blue-600 ${scrolled ? 'text-black' : 'text-white'}`}>
+            <a href="#contact" className={`font-bold text-xl transition-colors hover:text-blue-600 ${scrolled ? 'text-black' : 'text-white'}`}>
               Contact
             </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 rounded-md focus:outline-none  focus:ring-2 focus:ring-inset focus:ring-blue-600"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -130,12 +147,15 @@ const Navigation: React.FC = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white border-t border-gray-100"
+              className="md:hidden bg-white/50 border-t border-gray-100 shadow-lg rounded-b-xl overflow-hidden backdrop-blur-lg"
             >
               <div className="px-4 py-4 space-y-4">
-                <Link to="/" className="block font-bold text-black hover:text-blue-600">
+                <button
+                  onClick={handleHomeClick}
+                  className="block font-bold text-black hover:text-blue-600"
+                >
                   Home
-                </Link>
+                </button>
                 <a href="#about" className="block font-bold text-black hover:text-blue-600">
                   About
                 </a>

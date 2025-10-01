@@ -232,9 +232,9 @@ const HomePage: React.FC = () => {
                     <p className="text-black-600 mb-6">{company.description}</p>
                     <Link 
                       to={company.path}
-                      className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors cursor-pointer"
+                      className="inline-flex items-center text-blue-600 hover:text-blue-700 font-bold transition-colors cursor-pointer"
                     >
-                      Learn More
+                      View Company
                       <ChevronRight className="w-4 h-4 ml-1" />
                     </Link>
                   </div>
