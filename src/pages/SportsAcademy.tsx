@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Trophy, Heart, Users, Activity, Target, 
-  Award, Zap, Smile, Calendar, Star
+   Heart, Users, Activity, Target, 
+  Award, Zap, Smile,  Star
 } from 'lucide-react';
 import Footer from '../components/Footer';
 
