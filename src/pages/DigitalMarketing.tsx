@@ -5,6 +5,7 @@ import {
   BarChart, Users, Zap, Target, TrendingUp, Smartphone
 } from 'lucide-react';
 import Footer from '../components/Footer';
+import { Typewriter } from 'react-simple-typewriter';
 
 const DigitalMarketing: React.FC = () => {
   return (
@@ -39,15 +40,21 @@ const DigitalMarketing: React.FC = () => {
                 creative campaigns, and measurable results.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 2.5 }}
+                >
+                </motion.div>
                 <a 
                   href="#about" 
-                  className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-lg font-semibold hover:from-pink-600 hover:to-purple-600 transition-all cursor-pointer"
+                  className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-lg font-semibold hover:from-pink-600 hover:to-purple-600 transition-all transform hover:scale-105 hover:shadow-lg cursor-pointer"
                 >
                   Our Services
                 </a>
                 <a 
                   href="#portfolio" 
-                  className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer"
+                  className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 transform hover:scale-105 hover:shadow-lg cursor-pointer"
                 >
                   View Portfolio
                 </a>
@@ -92,10 +99,10 @@ const DigitalMarketing: React.FC = () => {
             {[
               {
                 icon: Facebook,
-                title: "Social Media Marketing",
+                title: "Social Media Marketing and Handling",
                 description: "Strategic campaigns across Instagram, Facebook, LinkedIn, YouTube, and more platforms.",
                 color: "from-blue-500 to-blue-600",
-                features: ["Content Creation", "Community Management", "Paid Advertising", "Analytics"]
+                features: ["Content Creation", "Community Management", "Paid Advertising", "Analytics","Audience Engagement","Brand Awareness"]
               },
               {
                 icon: Search,

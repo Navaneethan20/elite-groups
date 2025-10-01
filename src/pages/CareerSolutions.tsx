@@ -37,15 +37,21 @@ const CareerSolutions: React.FC = () => {
                 across IT and Non-IT industries.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 2.5 }}
+                >
+                </motion.div>
                 <a 
                   href="#about" 
-                  className="px-8 py-4 bg-white text-blue-900 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer"
+                  className="px-8 py-4 bg-gradient-to-r from-blue-600 to-teal-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all transform hover:scale-105 hover:shadow-lg cursor-pointerr"
                 >
                   Our Services
                 </a>
                 <a 
                   href="#contact" 
-                  className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer"
+                  className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 transform hover:scale-105 hover:shadow-lg cursor-pointer"
                 >
                   Get Started
                 </a>
