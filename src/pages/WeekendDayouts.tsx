@@ -168,7 +168,7 @@ const WeekendDayouts: React.FC = () => {
       </section>
 
       {/* Special Programs */}
-      <section className="py-20 bg-white">
+      <section className="py-20 w-full  bg-[url('dayouts.jpg')] bg-cover bg-center ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -176,8 +176,8 @@ const WeekendDayouts: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Special Programs & Events</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-white mb-6">Special Programs & Events</h2>
+            <p className="text-xl text-white max-w-3xl mx-auto">
               Unique themed events and seasonal programs that create lasting memories and foster personal growth.
             </p>
           </motion.div>
@@ -369,12 +369,12 @@ const WeekendDayouts: React.FC = () => {
               Book their next weekend dayout and watch them discover the joy of exploration!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-white text-yellow-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
+              <a href='mailto:eliteweekendouting@gmail.com?subject=Adventure%20Booking' className="px-8 py-4 bg-white text-yellow-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
                 Book Adventure
-              </button>
-              <button className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer">
+              </a>
+              <a href='https://wa.me/919705465342?text=Hello,I would like to view the schedule for weekend dayout.' className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer">
                 View Schedule
-              </button>
+              </a>
             </div>
           </motion.div>
         </div>

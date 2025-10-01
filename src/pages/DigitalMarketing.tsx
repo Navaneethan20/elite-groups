@@ -5,7 +5,6 @@ import {
   BarChart, Users, Zap, Target, TrendingUp, Smartphone
 } from 'lucide-react';
 import Footer from '../components/Footer';
-import { Typewriter } from 'react-simple-typewriter';
 
 const DigitalMarketing: React.FC = () => {
   return (
@@ -29,12 +28,13 @@ const DigitalMarketing: React.FC = () => {
                 <img src='\ELITE DM.jpg' alt='Logo' className="w-32 h-18 object-contain rounded-xl" />
               </div>
               
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                Elite Ads & Digital{' '}
-                <span className="inline-block bg-gradient-to-br from-pink-400 to-purple-400 bg-clip-text text-transparent">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-snug">
+                Elite Ads & Digital{" "}
+                <span className="inline-block pb-3 bg-gradient-to-br from-pink-400 to-purple-400 bg-clip-text text-transparent">
                   Marketing
                 </span>
               </h1>
+
               <p className="text-xl text-purple-100 mb-8">
                 Transform your brand's online presence with data-driven strategies, 
                 creative campaigns, and measurable results.
@@ -170,7 +170,7 @@ const DigitalMarketing: React.FC = () => {
       </section>
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="py-20 bg-white">
+      <section id="portfolio"  className="py-20 w-full  bg-[url('https://wallpaperbat.com/img/132423-pastel-purple-wallpaper-light-purple-wallpaper-light-purple.jpg')] bg-cover bg-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -326,9 +326,9 @@ const DigitalMarketing: React.FC = () => {
               Let's create a Ads & Digital marketing strategy that transforms your online presence and drives real business growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all cursor-pointer">
+              <a href='mailto:eliteadsdigitalmarketing@gmail.com?subject=Digital Marketing Campaign' className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all cursor-pointer">
                 Start Your Campaign
-              </button>
+              </a>
               <a href ="tel:8939540201" className="px-8 py-4 border-2 border-purple-600 text-purple-600 rounded-lg font-semibold hover:bg-purple-600 hover:text-white transition-all cursor-pointer">
                 Free Strategy Call
               </a>

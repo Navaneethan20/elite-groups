@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { 
-  Users, Award, Star, ChevronRight, Phone, Mail, MapPin, 
+import {
+  Users, Award, Star, ChevronRight, Phone, Mail, MapPin,
   Briefcase, Monitor, Heart, Trophy, Calendar, ChevronDown
 } from 'lucide-react';
 import Footer from '../components/Footer';
@@ -64,21 +64,22 @@ const HomePage: React.FC = () => {
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-400/5 to-teal-400/5 rounded-full blur-2xl"></div>
           </div>
         </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+        <div className="relative max-w-8xl mx-auto px-4  sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 2.5 }}
           >
-            <h1 
-            className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 mb-6 drop-shadow-2xl hover:drop-shadow-2xl transition-all" 
+            <h1
+              className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 mb-6 drop-shadow-2xl pb-3 hover:drop-shadow-2xl transition-all"
             >
-            <Typewriter
-                words={['Empowering Lives Through Excellence', 'ELITE GROUPS']}
+              <Typewriter
+                words={['Empowering Lives Through Excellence', 'Elite Groups']}
                 loop={Infinity}
                 cursor
                 cursorStyle="|"
+                cursorColor="#ffffff"
                 typeSpeed={100}
                 deleteSpeed={70}
                 delaySpeed={3000}
@@ -87,32 +88,35 @@ const HomePage: React.FC = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 2.5 }}
+              transition={{
+                duration: 1,     // animation duration
+                delay: 5.0,      // delay before animation starts
+                ease: "easeOut", // easing style
+              }}
             >
             </motion.div>
             <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
-              A comprehensive ecosystem of services spanning career solutions, digital growth, 
-              therapeutic care, sports development, and enriching experiences.
+             We bring together a diverse ecosystem of services designed to uplift every aspect of life from career solutions and digital growth to therapeutic care, sports development, and unique experiences that inspire and enrich.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 2.5 }}
-            >
-            </motion.div>
-          <a
-            href="#companies"
-            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-teal-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all transform hover:scale-105 hover:shadow-lg cursor-pointer"
-          >
-            Explore Our Companies
-          </a>
-          <a
-            href="#contact"
-            className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 transform hover:scale-105 hover:shadow-lg cursor-pointer"
-          >
-            Get In Touch
-          </a>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 2.5 }}
+              >
+              </motion.div>
+              <a
+                href="#companies"
+                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-teal-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all transform hover:scale-105 hover:shadow-lg cursor-pointer"
+              >
+                Explore Our Companies
+              </a>
+              <a
+                href="#contact"
+                className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 transform hover:scale-105 hover:shadow-lg cursor-pointer"
+              >
+                Get In Touch
+              </a>
             </div>
           </motion.div>
         </div>
@@ -144,8 +148,8 @@ const HomePage: React.FC = () => {
               About Elite Groups
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              Elite Groups is a diversified organization committed to transforming lives through innovative services 
-              and inclusive solutions. Our portfolio spans multiple industries, each designed to address unique needs 
+              Elite Groups is a diversified organization committed to transforming lives through innovative services
+              and inclusive solutions. Our portfolio spans multiple industries, each designed to address unique needs
               with excellence and compassion.
             </p>
           </motion.div>
@@ -234,8 +238,8 @@ const HomePage: React.FC = () => {
                   className="group bg-white/50 backdrop-blur-md rounded-2xl  shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
                 >
                   <div className="relative h-64 overflow-hidden">
-                    <img 
-                      src={company.image} 
+                    <img
+                      src={company.image}
                       alt={company.name}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
@@ -246,11 +250,11 @@ const HomePage: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="p-8">
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">{company.name}</h3>
                     <p className="text-black-600 mb-6">{company.description}</p>
-                    <Link 
+                    <Link
                       to={company.path}
                       className="inline-flex items-center text-blue-600 hover:text-blue-700 font-bold transition-colors cursor-pointer"
                     >
@@ -408,9 +412,9 @@ const HomePage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold">Phone</h3>
-                  <p className="text-gray-300">+91  <a href={`tel:${ 8122842482}`} className="text-gray-300 hover:text-white">
-                      { 8122842482}
-                    </a></p>
+                  <p className="text-gray-300">+91  <a href={`tel:${8122842482}`} className="text-gray-300 hover:text-white">
+                    {8122842482}
+                  </a></p>
                 </div>
               </div>
 
@@ -420,7 +424,7 @@ const HomePage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <p className="text-gray-300">info@elitegroups.com</p>
+                  <p className="text-gray-300"><a href='mailto:elitecareersolutions02@gmail.com' className="text-gray-300 hover:text-white">elitecareersolutions02@gmail.com</a></p>
                 </div>
               </div>
 
@@ -432,7 +436,7 @@ const HomePage: React.FC = () => {
                   <h3 className="font-semibold">Address</h3>
                   <p className="text-gray-300">
                     No:10, Harini Complex 3rd Floor, Bharathidasan Street,<br />
-                     Valasaravakkam, Chennai, Tamil Nadu 600087
+                    Valasaravakkam, Chennai, Tamil Nadu 600087
                   </p>
                 </div>
               </div>
@@ -440,17 +444,17 @@ const HomePage: React.FC = () => {
               {/* Map */}
               <div className="mt-8">
                 <div className="w-full h-64 bg-gray-800 rounded-lg overflow-hidden">
-                <iframe
-                  title="Elite Groups Location"
-                  src="https://www.google.com/maps?q=No:10, Harini Complex 3rd Floor, Bharathidasan Street, Valasaravakkam, Chennai, Tamil Nadu 600087&output=embed"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
+                  <iframe
+                    title="Elite Groups Location"
+                    src="https://www.google.com/maps?q=No:10, Harini Complex 3rd Floor, Bharathidasan Street, Valasaravakkam, Chennai, Tamil Nadu 600087&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
               </div>
             </motion.div>
 

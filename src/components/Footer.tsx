@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Building2, Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram, ChevronRight } from 'lucide-react';
+import { Building2, Phone, Mail, MapPin, Facebook, Linkedin, Instagram, ChevronRight, X } from 'lucide-react';
 
 type CompanyKey = 'career' | 'marketing' | 'speech' | 'sports' | 'weekend';
 
@@ -14,6 +14,15 @@ const companyNumbers: Record<CompanyKey, string[]> = {
   speech: ['+91 7305969724', '+044-48067961'],
   sports: ['+91 9705465342', '+91 9791007729'],
   weekend: ['+91 9705465342', '+91 9791007729'],
+};
+
+// ✅ New mail IDs record
+const companyMails: Record<CompanyKey, string[]> = {
+  career: ['elitecareersolutions02@gmail.com'],
+  marketing: ['eliteadsdigitalmarketing@gmail.com'],
+  speech: ['elitespeechhearingcentre@gmail.com '],
+  sports: ['elitesportsacademyheadoffice@gmail.com'],
+  weekend: ['eliteweekendouting@gmail.com'],
 };
 
 const Footer: React.FC<FooterProps> = ({ company }) => {
@@ -46,7 +55,7 @@ const Footer: React.FC<FooterProps> = ({ company }) => {
                 <Instagram className="w-5 h-5" />
               </a>
               <a href="#" className="w-10 h-10 bg-blue-400 rounded-lg flex items-center justify-center hover:bg-blue-500 transition-colors">
-                <Twitter className="w-5 h-5" />
+                <X className="w-5 h-5" />
               </a>
               <a href="#" className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors">
                 <Facebook className="w-5 h-5" />
@@ -76,7 +85,7 @@ const Footer: React.FC<FooterProps> = ({ company }) => {
                   onClick={() => handleNavigation('/digital-marketing')}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  Elite Ads & Digital marketing
+                  Elite Ads & Digital Marketing
                 </button>
               </li>
               <li className="flex items-center space-x-2">
@@ -113,22 +122,31 @@ const Footer: React.FC<FooterProps> = ({ company }) => {
           <div>
             <h3 className="text-lg font-semibold mb-6">Contact Info</h3>
             <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <span className="text-gray-300 space-y-4">
-                  {companyNumbers[company].map((number, idx) => (
-                    <div key={idx} className="flex items-center space-x-3">
-                      <Phone className="w-5 h-5 text-blue-400" />
-                      <a href={`tel:${number}`} className="text-gray-300 hover:text-white">
-                        {number}
-                      </a>
-                    </div>
-                  ))}
-                </span>
+              {/* Phone Numbers */}
+              <div>
+                {companyNumbers[company].map((number, idx) => (
+                  <div key={idx} className="flex items-center space-x-3 mb-2">
+                    <Phone className="w-5 h-5 text-blue-400" />
+                    <a href={`tel:${number}`} className="text-gray-300 hover:text-white">
+                      {number}
+                    </a>
+                  </div>
+                ))}
               </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-300">info@elitegroups.com</span>
+
+              {/* Dynamic Mails */}
+              <div>
+                {companyMails[company].map((email, idx) => (
+                  <div key={idx} className="flex items-center space-x-3 mb-2">
+                    <Mail className="w-5 h-5 text-blue-400" />
+                    <a href={`mailto:${email}`} className="text-gray-300 hover:text-white">
+                      {email}
+                    </a>
+                  </div>
+                ))}
               </div>
+
+              {/* Address */}
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-blue-400 mt-1" />
                 <span className="text-gray-300">
@@ -140,6 +158,7 @@ const Footer: React.FC<FooterProps> = ({ company }) => {
           </div>
         </div>
 
+        {/* Footer Bottom */}
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-300 text-sm">

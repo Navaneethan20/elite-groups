@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 
 const SpeechHearing: React.FC = () => {
   return (
-    <div className="bg-white">
+    <div className="min-h-screen bg-[url('speech.jpg')] bg-cover bg-center bg-fixed">
       {/* Hero Section */}
       <section className="relative pt-48 pb-48 bg-gradient-to-br from-green-800 to-teal-600 text-white overflow-hidden">
         <div className="absolute inset-0">
@@ -167,7 +167,7 @@ const SpeechHearing: React.FC = () => {
       </section>
 
       {/* Conditions We Treat */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-transparent ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -175,10 +175,10 @@ const SpeechHearing: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Conditions We Specialize In</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-black mb-6">Conditions We Specialize In</h2>
+            <p className="text-xl text-black max-w-3xl mx-auto">
               Our expert therapists provide specialized care for a wide range of speech, language, and hearing conditions.
-            </p>
+            </p>  
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -222,7 +222,7 @@ const SpeechHearing: React.FC = () => {
                     <h3 className="text-lg font-bold">{condition.title}</h3>
                   </div>
                 </div>
-                <p className="text-gray-600 text-sm">{condition.description}</p>
+                <p className="text-black text-sm">{condition.description}</p>
               </motion.div>
             ))}
           </div>
@@ -309,12 +309,12 @@ const SpeechHearing: React.FC = () => {
               Schedule a comprehensive assessment with our expert therapists today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-white text-green-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
+              <a href='mailto:elitespeechhearingcentre@gmail.com?subject=Book%20Assessment' className="px-8 py-4 bg-white text-green-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
                 Book Assessment
-              </button>
-              <button className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer">
+              </a>
+              <a href='tel:7305969724' className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer">
                 Call Us Now
-              </button>
+              </a>
             </div>
           </motion.div>
         </div>

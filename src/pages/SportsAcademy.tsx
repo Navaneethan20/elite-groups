@@ -167,21 +167,31 @@ const SportsAcademy: React.FC = () => {
       </section>
 
       {/* Conditions We Support */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-white relative overflow-hidden ">
+        <video
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          src="https://cdn.pixabay.com/video/2019/05/22/23881-337972830_tiny.mp4" // Replace with your video URL or local path
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Children We Support</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="relative z-10 max-w-4xl mx-auto text-center text-white">  
+            <h2 className="text-4xl font-bold text-white mb-6">Children We Support</h2>
+            <p className="text-xl text-white max-w-3xl mx-auto">
               Our inclusive programs are designed to support children with various special needs and developmental conditions.
             </p>
+          </div>  
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10 text-white">
             {[
               {
                 title: "Autism Spectrum Disorder",
@@ -227,6 +237,7 @@ const SportsAcademy: React.FC = () => {
               </motion.div>
             ))}
           </div>
+          
         </div>
       </section>
 
@@ -372,12 +383,12 @@ const SportsAcademy: React.FC = () => {
               Join our supportive community today!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-white text-orange-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
+              <a href='mailto:elitesportsacademyheadoffice@gmail.com?subject=Enroll Your Child' className="px-8 py-4 bg-white text-orange-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
                 Enroll Your Child
-              </button>
-              <button className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer">
+              </a>
+              <a href='tel:9705465342' className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer">
                 Schedule Visit
-              </button>
+              </a>
             </div>
           </motion.div>
         </div>
