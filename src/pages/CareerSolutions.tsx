@@ -286,12 +286,18 @@ const CareerSolutions: React.FC = () => {
               Let us help you find the perfect opportunity that matches your skills and aspirations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
+              <a href="mailto:info@elitegroups.com?subject=Schedule Consultation Request"
+                className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-300 transition-colors cursor-pointer inline-block">
                 Schedule Consultation
-              </button>
-              <button className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer">
-                Upload Resume
-              </button>
+              </a>
+              
+             <a href="https://wa.me/918122842482?text=Hello,I would like to get in touch with Elite Groups."
+                target="_blank"
+                className="px-8 py-4 bg-green-500 text-black rounded-lg font-semibold hover:bg-green-600 transition-colors cursor-pointer flex items-center gap-2 inline-block">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
+                  alt="WhatsApp" className="w-5 h-5" />
+                Contact via WhatsApp
+              </a>
             </div>
           </motion.div>
         </div>

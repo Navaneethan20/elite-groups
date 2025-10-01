@@ -322,9 +322,9 @@ const DigitalMarketing: React.FC = () => {
               <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all cursor-pointer">
                 Start Your Campaign
               </button>
-              <button className="px-8 py-4 border-2 border-purple-600 text-purple-600 rounded-lg font-semibold hover:bg-purple-600 hover:text-white transition-all cursor-pointer">
+              <a href ="tel:8939540201" className="px-8 py-4 border-2 border-purple-600 text-purple-600 rounded-lg font-semibold hover:bg-purple-600 hover:text-white transition-all cursor-pointer">
                 Free Strategy Call
-              </button>
+              </a>
             </div>
           </motion.div>
         </div>

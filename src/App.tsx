@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import HomePage from './pages/HomePage';
@@ -8,7 +7,7 @@ import SpeechHearing from './pages/SpeechHearing';
 import SportsAcademy from './pages/SportsAcademy';
 import WeekendDayouts from './pages/WeekendDayouts';
 import Navigation from './components/Navigation';
-import Footer from './components/Footer';
+import BackToTop from './pages/BackToTop';
 
 function App() {
   return (
@@ -29,6 +28,7 @@ function App() {
             <Route path="/sports-academy" element={<SportsAcademy />} />
             <Route path="/weekend-dayouts" element={<WeekendDayouts />} />
           </Routes>
+          <BackToTop />
         </motion.main>
       </div>
     </Router>

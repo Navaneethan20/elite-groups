@@ -14,6 +14,7 @@ const companies = [
 const Navigation: React.FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+   const [isCompaniesOpen, setIsCompaniesOpen] = useState(false); 
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -42,9 +43,8 @@ const Navigation: React.FC = () => {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/50 backdrop-blur-lg shadow-lg shadow-black/10' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/50 backdrop-blur-lg shadow-lg shadow-black/10' : 'bg-transparent'
+        }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -68,16 +68,15 @@ const Navigation: React.FC = () => {
           <div className="hidden md:flex items-center space-x-8">
             <button
               onClick={handleHomeClick}
-              className={`font-bold text-xl transition-colors hover:text-blue-600 ${
-                scrolled ? 'text-black' : 'text-white'
-              } ${location.pathname === '/' ? 'text-blue-600' : ''}`}
+              className={`font-bold text-xl transition-colors hover:text-blue-600 ${scrolled ? 'text-black' : 'text-white'
+                } ${location.pathname === '/' ? 'text-blue-600' : ''}`}
             >
               Home
             </button>
             <a href="#about" className={`font-bold text-xl transition-colors hover:text-blue-600 ${scrolled ? 'text-black' : 'text-white'}`}>
               About
             </a>
-            
+
             {/* Companies Dropdown */}
             <div
               className="relative"
@@ -86,11 +85,11 @@ const Navigation: React.FC = () => {
             >
               <button className={`font-bold flex items-center space-x-1 text-xl transition-colors hover:text-blue-600 ${scrolled ? 'text-black' : 'text-white'}`}>
                 <span>Companies</span>
-                <ChevronDown 
-                  className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} 
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
                 />
               </button>
-              
+
               <AnimatePresence>
                 {isDropdownOpen && (
                   <motion.div
@@ -133,19 +132,23 @@ const Navigation: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-md focus:outline-none  focus:ring-2 focus:ring-inset focus:ring-blue-600"
+            className="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6 text-white" />
+            ) : (
+              <Menu className="w-6 h-6 text-white" />
+            )}
           </button>
         </div>
 
-        {/* Mobile Menu */}
+
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
+              animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden bg-white/50 border-t border-gray-100 shadow-lg rounded-b-xl overflow-hidden backdrop-blur-lg"
             >
@@ -156,22 +159,49 @@ const Navigation: React.FC = () => {
                 >
                   Home
                 </button>
-                <a href="#about" className="block font-bold text-black hover:text-blue-600">
+
+                <a
+                  href="#about"
+                  className="block font-bold text-black hover:text-blue-600"
+                >
                   About
                 </a>
+
                 <div className="space-y-2">
-                  <p className="font-bold text-black">Companies</p>
-                  {companies.map((company, index) => (
-                    <Link
-                      key={index}
-                      to={company.path}
-                      className="block pl-4 text-sm font-bold text-black hover:text-blue-600"
-                    >
-                      {company.name}
-                    </Link>
-                  ))}
+                  <button
+                    onClick={() => setIsCompaniesOpen(!isCompaniesOpen)}
+                    className="flex justify-between w-full font-bold text-black hover:text-blue-600"
+                  >
+                    Companies
+                    <span>{isCompaniesOpen ? "▲" : "▼"}</span>
+                  </button>
+
+                  <AnimatePresence>
+                    {isCompaniesOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="pl-4 space-y-2"
+                      >
+                        {companies.map((company, index) => (
+                          <Link
+                            key={index}
+                            to={company.path}
+                            className="block text-sm font-bold text-black hover:text-blue-600"
+                          >
+                            {company.name}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
-                <a href="#contact" className="block font-bold text-black hover:text-blue-600">
+
+                <a
+                  href="#contact"
+                  className="block font-bold text-black hover:text-blue-600"
+                >
                   Contact
                 </a>
               </div>
