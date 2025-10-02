@@ -168,7 +168,7 @@ const WeekendDayouts: React.FC = () => {
       </section>
 
       {/* Special Programs */}
-      <section className="py-20 w-full  bg-[url('dayouts.jpg')] bg-cover bg-center ">
+      <section className="py-20 w-full  bg-[url('/dayouts.jpg')] bg-cover bg-center ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
