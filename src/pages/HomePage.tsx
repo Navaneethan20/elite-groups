@@ -109,7 +109,6 @@ const HomePage: React.FC = () => {
                 cursorStyle="|"
                 cursorColor="#ffffff"
                 typeSpeed={100}
-                deleteSpeed={70}
                 delaySpeed={3000}
               />
             </h1>
