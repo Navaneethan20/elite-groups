@@ -8,6 +8,9 @@ import SportsAcademy from './pages/SportsAcademy';
 import WeekendDayouts from './pages/WeekendDayouts';
 import Navigation from './components/Navigation';
 import BackToTop from './pages/BackToTop';
+import PrivacyPolicy from './pages/privacy-policy';
+import TermsOfService from './pages/terms-of-service';
+import CookiePolicy from './pages/cookie-policy';
 
 function App() {
   return (
@@ -27,8 +30,12 @@ function App() {
             <Route path="/speech-hearing" element={<SpeechHearing />} />
             <Route path="/sports-academy" element={<SportsAcademy />} />
             <Route path="/weekend-dayouts" element={<WeekendDayouts />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/cookie-policy" element={<CookiePolicy />} />
           </Routes>
           <BackToTop />
+          
         </motion.main>
       </div>
     </Router>

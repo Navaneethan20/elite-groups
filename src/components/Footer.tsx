@@ -1,14 +1,18 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Building2, Phone, Mail, MapPin, Facebook, Linkedin, Instagram, ChevronRight, X } from 'lucide-react';
+import { Building2, Phone, Mail, MapPin, Facebook, Linkedin, Instagram, ChevronRight } from 'lucide-react';
+import {Link} from 'react-router-dom';
+import { FaWhatsapp } from 'react-icons/fa';
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></link>
 
-type CompanyKey = 'career' | 'marketing' | 'speech' | 'sports' | 'weekend';
+type CompanyKey = 'home'|'career' | 'marketing' | 'speech' | 'sports' | 'weekend';
 
 interface FooterProps {
   company: CompanyKey;
 }
 
 const companyNumbers: Record<CompanyKey, string[]> = {
+  home: ['+91 8122842482'],
   career: ['+91 8122842482', '+044-42697264'],
   marketing: ['+91 8939540201'],
   speech: ['+91 7305969724', '+044-48067961'],
@@ -18,6 +22,7 @@ const companyNumbers: Record<CompanyKey, string[]> = {
 
 // ✅ New mail IDs record
 const companyMails: Record<CompanyKey, string[]> = {
+  home: ['elitegroupz58@gmail.com'],
   career: ['elitecareersolutions02@gmail.com'],
   marketing: ['eliteadsdigitalmarketing@gmail.com'],
   speech: ['elitespeechhearingcentre@gmail.com '],
@@ -44,7 +49,7 @@ const Footer: React.FC<FooterProps> = ({ company }) => {
               <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-teal-600 rounded-lg flex items-center justify-center">
                 <Building2 className="w-6 h-6 text-white" />
               </div>
-              <span className="text-2xl font-bold">Elite Groups</span>
+              <span className="text-2xl font-bold">Elite Groupz</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
               Transforming lives through comprehensive services spanning career solutions, Ads & Digital marketing,
@@ -54,8 +59,8 @@ const Footer: React.FC<FooterProps> = ({ company }) => {
               <a href="#" className="w-10 h-10 bg-pink-600 rounded-lg flex items-center justify-center hover:bg-pink-700 transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-blue-400 rounded-lg flex items-center justify-center hover:bg-blue-500 transition-colors">
-                <X className="w-5 h-5" />
+              <a href="https://chat.whatsapp.com/L8kfoF42zgnDhlQp7fbD7s" className="w-10 h-10 bg-blue-400 rounded-lg flex items-center justify-center hover:bg-blue-500 transition-colors">
+                <FaWhatsapp className="w-5 h-5" />
               </a>
               <a href="#" className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors">
                 <Facebook className="w-5 h-5" />
@@ -162,12 +167,12 @@ const Footer: React.FC<FooterProps> = ({ company }) => {
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-300 text-sm">
-              © 2025 Elite Groups. All rights reserved.
+              © {new Date().getFullYear()} Elite Groupz. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-300 hover:text-white text-sm transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-300 hover:text-white text-sm transition-colors">Terms of Service</a>
-              <a href="#" className="text-gray-300 hover:text-white text-sm transition-colors">Cookie Policy</a>
+              <Link to="/privacy-policy" className="text-gray-300 hover:text-white text-sm transition-colors">Privacy Policy</Link>
+              <Link to="/terms-of-service" className="text-gray-300 hover:text-white text-sm transition-colors">Terms of Service</Link>
+              <a href="/cookie-policy" className="text-gray-300 hover:text-white text-sm transition-colors">Cookie Policy</a>
             </div>
           </div>
         </div>

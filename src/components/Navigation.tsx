@@ -53,14 +53,17 @@ const Navigation: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div
-            className="flex items-center space-x-3 cursor-pointer"
+         className="flex items-center space-x-3 cursor-pointer"
             onClick={handleHomeClick}
           >
             <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-teal-600 rounded-lg flex items-center justify-center">
               <Building2 className="w-6 h-6 text-white" />
             </div>
-            <span className={`text-xl font-bold transition-colors ${scrolled ? 'text-black' : 'text-white'} hover:text-blue-600`}>
-              Elite Groups
+
+            {/* <img src='\ELITE HOME.jpg' alt='Logo' className="w-16 h-16 object-contain rounded-xl"></img> */}
+            
+            <span className={`text-2xl font-bold transition-colors ${scrolled ? 'text-black' : 'text-white'} hover:text-blue-600`}>
+              Elite Groupz
             </span>
           </div>
 

@@ -297,7 +297,7 @@ const CareerSolutions: React.FC = () => {
                 Schedule Consultation
               </a>
               
-             <a href="https://wa.me/918122842482?text=Hello,I would like to get in touch with Elite Groups."
+             <a href="https://wa.me/918122842482?text=Hello,I would like to get in touch with Elite Groupz."
                 target="_blank"
                 className="px-8 py-4 bg-green-500 text-black rounded-lg font-semibold hover:bg-green-600 transition-colors cursor-pointer flex items-center gap-2 inline-block">
                 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
