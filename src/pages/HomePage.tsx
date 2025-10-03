@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import emailjs from "emailjs-com";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   Users, Award, Star, ChevronRight, Phone, Mail, MapPin,
@@ -53,8 +53,17 @@ const companies = [
   }
 ];
 
+
+
 const HomePage: React.FC = () => {
 
+const navigate = useNavigate();
+  const handleNavigation = (path: string) => {
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  
   const form = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e: React.FormEvent) => {
@@ -79,6 +88,8 @@ const HomePage: React.FC = () => {
         }
       );
   };
+
+  
 
   return (
     <div className="bg-white">
@@ -140,7 +151,7 @@ const HomePage: React.FC = () => {
               </a>
               <a
                 href="#contact"
-                className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 transform hover:scale-105 hover:shadow-lg cursor-pointer"
+                className="px-8 py-4 bg-white/10 bg-white/30 text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 transform hover:scale-105 hover:shadow-lg cursor-pointer"
               >
                 Get In Touch
               </a>
@@ -236,63 +247,85 @@ const HomePage: React.FC = () => {
       {/* Companies Section */}
       <section id="companies" className="py-20 bg-white relative overflow-hidden">
         {/* Background Video */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover z-0"
-          src="https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4" // Replace with your video URL or local path
+        <video   className="absolute inset-0 w-full h-full object-cover z-0"
+          src="https://cdn.pixabay.com/video/2021/10/12/91744-636709154_large.mp4"
           autoPlay
           loop
           muted
           playsInline
+          preload="auto"
         />
-        {/* Optional: Overlay for readability */}
-        <div className="absolute inset-0 bg-black/30 z-0" />
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black/40 z-0"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-16 gpu-boost"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Our Companies
             </h2>
-            <p className="text-xl text-white max-w-3xl mx-auto">
-              Discover our diverse portfolio of specialized companies, each dedicated to excellence in their respective fields.
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+              Discover our diverse portfolio of specialized companies, each dedicated
+              to excellence in their respective fields.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Animate as a group instead of per-card */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.15 } }
+            }}
+            className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+          >
             {companies.map((company, index) => {
               const IconComponent = company.icon;
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group bg-white/50 backdrop-blur-md rounded-2xl  shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                  variants={{
+                    hidden: { opacity: 0, y: 30 },
+                    visible: { opacity: 1, y: 0 }
+                  }}
+                  transition={{ duration: 0.6 }}
+                  className="group bg-white/70 rounded-2xl shadow-lg overflow-hidden 
+                       hover:shadow-2xl transition-transform duration-300 
+                       hover:-translate-y-2 gpu-boost"
                 >
                   <div className="relative h-64 overflow-hidden">
-                    <img
+                    <img loading="lazy"
                       src={company.image}
                       alt={company.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-110 
+                           transition-transform duration-500"
                     />
-                    <div className={`absolute inset-0 bg-gradient-to-r ${company.color} opacity-80`} />
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-r ${company.color} opacity-70`}
+                    />
                     <div className="absolute top-4 left-4">
-                      <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-lg flex items-center justify-center">
+                      <div className="w-12 h-12 bg-black/40 rounded-lg flex items-center justify-center">
                         <IconComponent className="w-6 h-6 text-white" />
                       </div>
                     </div>
                   </div>
 
                   <div className="p-8">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{company.name}</h3>
-                    <p className="text-black-600 mb-6">{company.description}</p>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                      {company.name}
+                    </h3>
+                    <p className="text-gray-600 mb-6">{company.description}</p>
                     <Link
+                      onClick={() => handleNavigation(company.path)}
                       to={company.path}
-                      className="inline-flex items-center text-blue-600 hover:text-blue-700 font-bold transition-colors cursor-pointer"
+                      className="inline-flex items-center text-blue-600 hover:text-blue-700 font-bold transition-colors"
                     >
                       View Company
                       <ChevronRight className="w-4 h-4 ml-1" />
@@ -301,9 +334,10 @@ const HomePage: React.FC = () => {
                 </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
+
 
       {/* Reviews Section */}
       <section className="py-20 bg-gray-50">

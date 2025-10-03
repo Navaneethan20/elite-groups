@@ -12,8 +12,8 @@ const WeekendDayouts: React.FC = () => {
       {/* Hero Section */}
       <section className="relative pt-48 pb-48 bg-gradient-to-br from-yellow-600 via-yellow-500 to-orange-500 text-white overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-10 right-10 w-64 h-64 bg-orange-400/30 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute bottom-10 left-10 w-96 h-96 bg-yellow-400/30 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div className="absolute top-10 right-10 w-64 h-64 bg-orange-400/30 rounded-full blur-xl "></div>
+          <div className="absolute bottom-10 left-10 w-96 h-96 bg-yellow-400/30 rounded-full blur-2xl  delay-1000"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-yellow-400/10 to-orange-400/10 rounded-full blur-3xl"></div>
         </div>
         
@@ -52,7 +52,7 @@ const WeekendDayouts: React.FC = () => {
                 </a>
                 <a 
                   href="#contact" 
-                  className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 transform hover:scale-105 hover:shadow-lg cursor-pointer"
+                  className="px-8 py-4 bg-white/10 bg-white/30 text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 transform hover:scale-105 hover:shadow-lg cursor-pointer"
                 >
                   Book Adventure
                 </a>
@@ -372,7 +372,7 @@ const WeekendDayouts: React.FC = () => {
               <a href='mailto:eliteweekendouting@gmail.com?subject=Adventure%20Booking' className="px-8 py-4 bg-white text-yellow-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
                 Book Adventure
               </a>
-              <a href='https://wa.me/919705465342?text=Hello,I would like to view the schedule for weekend dayout.' className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer">
+              <a href='https://wa.me/919705465342?text=Hello,I would like to view the schedule for weekend dayout.' className="px-8 py-4 bg-white/10 bg-white/30 text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer">
                 View Schedule
               </a>
             </div>

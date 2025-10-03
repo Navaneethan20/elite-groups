@@ -12,8 +12,8 @@ const DigitalMarketing: React.FC = () => {
       {/* Hero Section */}
       <section className="relative pt-48 pb-48 bg-gradient-to-br from-purple-900 via-purple-800 to-pink-700 text-white overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-10 right-10 w-64 h-64 bg-pink-400/20 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute bottom-10 left-10 w-96 h-96 bg-purple-400/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div className="absolute top-10 right-10 w-64 h-64 bg-pink-400/20 rounded-full blur-xl "></div>
+          <div className="absolute bottom-10 left-10 w-96 h-96 bg-purple-400/20 rounded-full blur-2xl  delay-1000"></div>
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,7 +54,7 @@ const DigitalMarketing: React.FC = () => {
                 </a>
                 <a 
                   href="#portfolio" 
-                  className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 transform hover:scale-105 hover:shadow-lg cursor-pointer"
+                  className="px-8 py-4 bg-white/10 bg-white/30 text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 transform hover:scale-105 hover:shadow-lg cursor-pointer"
                 >
                   View Portfolio
                 </a>
@@ -299,7 +299,7 @@ const DigitalMarketing: React.FC = () => {
                   <div className="w-20 h-20 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
                     <span className="text-lg font-bold">{process.step}</span>
                   </div>
-                  <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <div className="w-12 h-12 bg-white/20 bg-white/30 rounded-lg flex items-center justify-center mx-auto mb-4">
                     <IconComponent className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold mb-4">{process.title}</h3>

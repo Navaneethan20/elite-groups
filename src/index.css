@@ -7,3 +7,15 @@
 html {
     scroll-behavior: smooth;
 }
+
+/* performance helpers */
+.gpu-boost {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+/* slight helper so image hover transforms are smoother */
+.img-smooth {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}

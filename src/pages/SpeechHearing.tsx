@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 
 const SpeechHearing: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[url('/speech.jpg')] bg-cover bg-center bg-fixed">
+    <div className="min-h-screen bg-[url('/speech.jpg')] bg-cover bg-center ">
       {/* Hero Section */}
       <section className="relative pt-48 pb-48 bg-gradient-to-br from-green-800 to-teal-600 text-white overflow-hidden">
         <div className="absolute inset-0">
@@ -51,7 +51,7 @@ const SpeechHearing: React.FC = () => {
                 </a>
                 <a 
                   href="#contact" 
-                  className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 transform hover:scale-105 hover:shadow-lg cursor-pointer"
+                  className="px-8 py-4 bg-white/10 bg-white/30 text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 transform hover:scale-105 hover:shadow-lg cursor-pointer"
                 >
                   Book Assessment
                 </a>
@@ -312,7 +312,7 @@ const SpeechHearing: React.FC = () => {
               <a href='mailto:elitespeechhearingcentre@gmail.com?subject=Book%20Assessment' className="px-8 py-4 bg-white text-green-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
                 Book Assessment
               </a>
-              <a href='tel:7305969724' className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer">
+              <a href='tel:7305969724' className="px-8 py-4 bg-white/10 bg-white/30 text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer">
                 Call Us Now
               </a>
             </div>

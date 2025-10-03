@@ -24,7 +24,7 @@ const CareerSolutions: React.FC = () => {
               transition={{ duration: 0.6 }}
             >
               {/* Logo Space */}
-              <div className="w-24 h-24 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center mb-8">
+              <div className="w-24 h-24 bg-white/20 bg-white/30 rounded-xl flex items-center justify-center mb-8">
                 <img src='\ELITE CAREER SOLUTIONS LOGO.jpg' alt='Logo' className="w-24 h-24 object-contain rounded-xl" />
               </div>
               
@@ -51,7 +51,7 @@ const CareerSolutions: React.FC = () => {
                 </a>
                 <a 
                   href="#contact" 
-                  className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 transform hover:scale-105 hover:shadow-lg cursor-pointer"
+                  className="px-8 py-4 bg-white/10 bg-white/30 text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 transform hover:scale-105 hover:shadow-lg cursor-pointer"
                 >
                   Get Started
                 </a>
@@ -62,7 +62,7 @@ const CareerSolutions: React.FC = () => {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
+              className="relative gpu-boost"
             >
               <img 
                 src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg" 
@@ -82,7 +82,7 @@ const CareerSolutions: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-16 gpu-boost"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Our Services

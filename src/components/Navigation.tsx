@@ -41,6 +41,11 @@ const Navigation: React.FC = () => {
     }
   };
 
+    const handleNavigation = (path: string) => {
+      navigate(path);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
   return (
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/50 backdrop-blur-lg shadow-lg shadow-black/10' : 'bg-transparent'
@@ -100,7 +105,7 @@ const Navigation: React.FC = () => {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -12, scale: 0.95 }}
                     transition={{ duration: 0.22, ease: "easeOut" }}
-                    className="absolute top-full left-0 mt-2 w-64 bg-white/50 backdrop-blur-lg rounded-xl shadow-xl border border-gray-200 overflow-hidden ring-1 ring-blue-200"
+                    className="absolute top-full left-0 mt-2 w-64 bg-white/50 backdrop-blur-lg rounded-xl shadow-xl border border-gray-200 overflow-hidden ring-1 ring-blue-200 gpu-boost"
                   >
                     {companies.map((company, index) => (
                       <motion.div
@@ -110,6 +115,7 @@ const Navigation: React.FC = () => {
                         transition={{ delay: 0.04 * index, duration: 0.18 }}
                       >
                         <Link
+                          onClick={() => handleNavigation(company.path)}
                           to={company.path}
                           className="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-all border-b border-gray-100 last:border-0 group"
                         >
@@ -153,7 +159,7 @@ const Navigation: React.FC = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white/50 border-t border-gray-100 shadow-lg rounded-b-xl overflow-hidden backdrop-blur-lg"
+              className="gpu-boost md:hidden bg-white/50 border-t border-gray-100 shadow-lg rounded-b-xl overflow-hidden backdrop-blur-lg"
             >
               <div className="px-4 py-4 space-y-4">
                 <button
@@ -185,7 +191,7 @@ const Navigation: React.FC = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="pl-4 space-y-2"
+                        className="pl-4 space-y-2 gpu-boost"
                       >
                         {companies.map((company, index) => (
                           <Link

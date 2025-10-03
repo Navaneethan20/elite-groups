@@ -24,8 +24,8 @@ const SportsAcademy: React.FC = () => {
               transition={{ duration: 0.6 }}
             >
               {/* Logo Space */}
-              <div className="w-32 h-32 bg-gradient-to-r from-orange-600 to-yellow-600 rounded-xl flex items-center justify-center mb-8">
-                <img src='\ELITE SPORTS.jpg' alt='Logo' className="w-32 h-32 object-contain rounded-xl" />
+              <div className="w-32 h-18 bg-gradient-to-r from-orange-600 to-yellow-600 rounded-xl flex items-center justify-center mb-8">
+                <img src='\ELITE SPORTS.jpg' alt='Logo' className="w-32 h-18 object-contain rounded-xl" />
               </div>
               
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
@@ -51,7 +51,7 @@ const SportsAcademy: React.FC = () => {
                 </a>
                 <a 
                   href="#contact" 
-                  className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 transform hover:scale-105 hover:shadow-lg cursor-pointer"
+                  className="px-8 py-4 bg-white/10 bg-white/30 text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 transform hover:scale-105 hover:shadow-lg cursor-pointer"
                 >
                   Enroll Now
                 </a>
@@ -168,8 +168,7 @@ const SportsAcademy: React.FC = () => {
 
       {/* Conditions We Support */}
       <section className="py-20 bg-white relative overflow-hidden ">
-        <video
-          className="absolute inset-0 w-full h-full object-cover z-0"
+        <video preload="auto"  className="absolute inset-0 w-full h-full object-cover z-0"
           src="https://cdn.pixabay.com/video/2019/05/22/23881-337972830_tiny.mp4" // Replace with your video URL or local path
           autoPlay
           loop
@@ -386,7 +385,7 @@ const SportsAcademy: React.FC = () => {
               <a href='mailto:elitesportsacademyheadoffice@gmail.com?subject=Enroll Your Child' className="px-8 py-4 bg-white text-orange-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
                 Enroll Your Child
               </a>
-              <a href='tel:9705465342' className="px-8 py-4 bg-white/10 backdrop-blur-md text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer">
+              <a href='tel:9705465342' className="px-8 py-4 bg-white/10 bg-white/30 text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer">
                 Schedule Visit
               </a>
             </div>

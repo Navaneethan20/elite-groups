@@ -19,7 +19,7 @@ export default function BackToTop() {
     visible && (
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-10 left-10 p-3 rounded-full backdrop-blur-md bg-white/20 border border-white/30 shadow-lg hover:bg-white/30 transition-all cursor-pointer flex items-center justify-center"
+        className="fixed bottom-10 left-10 p-3 rounded-full bg-white/30 bg-white/20 border border-white/30 shadow-lg hover:bg-white/30 transition-all cursor-pointer flex items-center justify-center"
         aria-label="Back to top"
       >
         {/* Arrow Up Icon */}
