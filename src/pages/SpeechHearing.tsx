@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 
 const SpeechHearing: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[url('/speech.jpg')] bg-cover bg-center ">
+    <div className="min-h-screen bg-[url('/speech.jpg')] bg-cover bg-center bg-no-repeat bg-fixed ">
       {/* Hero Section */}
       <section className="relative pt-48 pb-48 bg-gradient-to-br from-green-800 to-teal-600 text-white overflow-hidden">
         <div className="absolute inset-0">
