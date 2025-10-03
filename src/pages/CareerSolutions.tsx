@@ -5,6 +5,7 @@ import {
   TrendingUp, Building, CheckCircle, Star, ArrowRight
 } from 'lucide-react';
 import Footer from '../components/Footer';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const CareerSolutions: React.FC = () => {
   return (
@@ -36,7 +37,7 @@ const CareerSolutions: React.FC = () => {
                 Your trusted partner in connecting skilled professionals with the right opportunities 
                 across IT and Non-IT industries.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-row sm:flex-row gap-4">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -138,7 +139,7 @@ const CareerSolutions: React.FC = () => {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                  className="bg-white p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
                 >
                   <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center mb-6`}>
                     <IconComponent className="w-8 h-8 text-white" />
@@ -161,13 +162,13 @@ const CareerSolutions: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">How We Work</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-black mb-6">How We Work</h2>
+            <p className="text-xl text-black max-w-3xl mx-auto">
               Our streamlined process ensures the perfect match between candidates and employers.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative overflow-hidden">
             {[
               {
                 step: "01",
@@ -200,10 +201,10 @@ const CareerSolutions: React.FC = () => {
                 <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-2xl font-bold text-white">{process.step}</span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{process.title}</h3>
-                <p className="text-gray-600">{process.description}</p>
+                <h3 className="text-xl font-bold text-black mb-4">{process.title}</h3>
+                <p className="text-black">{process.description}</p>
                 {index < 3 && (
-                  <div className="hidden md:block absolute top-10 left-full w-full">
+                  <div className="hidden md:block absolute top-10 right-[-20px]">
                     <ArrowRight className="w-6 h-6 text-blue-600 mx-auto" />
                   </div>
                 )}
@@ -299,9 +300,8 @@ const CareerSolutions: React.FC = () => {
               
              <a href="https://wa.me/918122842482?text=Hello,I would like to get in touch with Elite Groupz."
                 target="_blank"
-                className="px-8 py-4 bg-green-500 text-black rounded-lg font-semibold hover:bg-green-600 transition-colors cursor-pointer flex items-center gap-2 inline-block">
-                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
-                  alt="WhatsApp" className="w-5 h-5" />
+                className="px-8 py-4 bg-green-500 text-black rounded-lg font-semibold hover:bg-green-600 transition-colors cursor-pointer flex items-center justify-center gap-2 inline-block">
+                <FaWhatsapp className="w-6 h-6" />
                 Contact via WhatsApp
               </a>
             </div>

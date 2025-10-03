@@ -5,6 +5,7 @@ import {
   BarChart, Users, Zap, Target, TrendingUp, Smartphone
 } from 'lucide-react';
 import Footer from '../components/Footer';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const DigitalMarketing: React.FC = () => {
   return (
@@ -39,7 +40,7 @@ const DigitalMarketing: React.FC = () => {
                 Transform your brand's online presence with data-driven strategies, 
                 creative campaigns, and measurable results.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-row sm:flex-row gap-4">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -326,7 +327,8 @@ const DigitalMarketing: React.FC = () => {
               Let's create a Ads & Digital marketing strategy that transforms your online presence and drives real business growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href='mailto:eliteadsdigitalmarketing@gmail.com?subject=Digital Marketing Campaign' className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all cursor-pointer">
+              <a href='https://wa.me/9962900424?text=I%20want%20to%20start%20a%20Digital%20Marketing%20Campaign' className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all cursor-pointer">
+               <FaWhatsapp className="inline-block mr-2 w-6 h-6" />
                 Start Your Campaign
               </a>
               <a href ="tel:8939540201" className="px-8 py-4 border-2 border-purple-600 text-purple-600 rounded-lg font-semibold hover:bg-purple-600 hover:text-white transition-all cursor-pointer">

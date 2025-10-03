@@ -5,6 +5,7 @@ import {
   Users, Heart, Smile, Sun, Trees, Award, Activity
 } from 'lucide-react';
 import Footer from '../components/Footer';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const WeekendDayouts: React.FC = () => {
   return (
@@ -31,13 +32,15 @@ const WeekendDayouts: React.FC = () => {
               
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
                 Elite Weekend
-                <span className="block text-orange-300">Dayouts</span>
+                <span className="block text-orange-300">Outings</span>
               </h1>
+              <h2 className="font-bold text-3xl mb-2">For the Happiness</h2>
               <p className="text-xl text-yellow-100 mb-8">
                 Creating magical weekend experiences for special children through safe, engaging, 
                 and joyful outdoor adventures and enriching activities.
+                
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-row sm:flex-row gap-4">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -67,13 +70,25 @@ const WeekendDayouts: React.FC = () => {
             >
               <img 
                 src="https://img.freepik.com/free-photo/kid-playing-with-paper-plane_23-2151582205.jpg" 
-                alt="Weekend Dayouts"
+                alt="Weekend Outings"
                 className="w-full h-96 object-cover rounded-2xl shadow-2xl"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-yellow-900/50 to-transparent rounded-2xl"></div>
             </motion.div>
           </div>
         </div>
+        <a
+          href="https://chat.whatsapp.com/L8kfoF42zgnDhlQp7fbD7s"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-10 right-8 bg-green-500 font-semibold text-black rounded-full px-5 py-4 shadow-lg flex items-center gap-2 hover:bg-green-600 border border-black transition-all z-50 sm:px-5 sm:py-4 sm:text-base sm:gap-2
+             px-3 py-2 text-sm gap-1 sm:shadow-lg"
+        >
+            <FaWhatsapp size={24} />
+            <span className="hidden sm:inline">
+              Join Group
+            </span>
+        </a>
       </section>
 
       {/* Activities Section */}
@@ -366,13 +381,14 @@ const WeekendDayouts: React.FC = () => {
             <h2 className="text-4xl font-bold mb-6">Start Your Child's Adventure Journey</h2>
             <p className="text-xl text-yellow-100 mb-8">
               Give your child the gift of adventure, friendship, and unforgettable experiences. 
-              Book their next weekend dayout and watch them discover the joy of exploration!
+              Book their next weekend outing and watch them discover the joy of exploration!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href='mailto:eliteweekendouting@gmail.com?subject=Adventure%20Booking' className="px-8 py-4 bg-white text-yellow-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
                 Book Adventure
               </a>
-              <a href='https://wa.me/919705465342?text=Hello,I would like to view the schedule for weekend dayout.' className="px-8 py-4 bg-white/10 bg-white/30 text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer">
+              <a href='https://wa.me/919705465342?text=Hello,I would like to view the schedule for weekend outing.' className="px-8 py-4 bg-white/10 bg-white/30 text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer">
+                <FaWhatsapp className="w-6 h-6 inline-block mr-2" />
                 View Schedule
               </a>
             </div>

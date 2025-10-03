@@ -17,7 +17,7 @@ export default function TermsOfService() {
         <li>Elite Ads & Digital Marketing</li>
         <li>Elite Speech & Hearing Centre</li>
         <li>Elite Sports Academy</li>
-        <li>Elite Weekend Dayouts</li>
+        <li>Elite Weekend Outings</li>
       </ul>
 
       <h2 className="text-xl font-semibold mt-6 mb-2">2. User Responsibilities</h2>

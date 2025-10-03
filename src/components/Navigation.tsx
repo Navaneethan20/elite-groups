@@ -8,7 +8,7 @@ const companies = [
   { name: 'Elite Ads & Digital marketing', path: '/digital-marketing', color: 'text-purple-600' },
   { name: 'Elite Speech & Hearing Centre', path: '/speech-hearing', color: 'text-green-600' },
   { name: 'Elite Sports Academy', path: '/sports-academy', color: 'text-orange-600' },
-  { name: 'Elite Weekend Dayouts', path: '/weekend-dayouts', color: 'text-yellow-600' },
+  { name: 'Elite Weekend Outings', path: '/weekend-dayouts', color: 'text-yellow-600' },
 ];
 
 const Navigation: React.FC = () => {
@@ -156,33 +156,46 @@ const Navigation: React.FC = () => {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="gpu-boost md:hidden bg-white/50 border-t border-gray-100 shadow-lg rounded-b-xl overflow-hidden backdrop-blur-lg"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 40 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="fixed top-16 right-4 z-50 md:hidden"
             >
-              <div className="px-4 py-4 space-y-4">
+              <div className="w-64 max-h-[80vh] overflow-y-auto rounded-xl shadow-lg bg-white/90 backdrop-blur-md border border-gray-200 p-3 space-y-2">
+
+                {/* Home */}
                 <button
-                  onClick={handleHomeClick}
-                  className="block font-bold text-black hover:text-blue-600"
+                  onClick={() => {
+                    handleHomeClick();
+                    setIsMobileMenuOpen(false);
+                    setIsCompaniesOpen(false);
+                  }}
+                  className="block w-full text-left px-3 py-2 rounded-md font-semibold text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition"
                 >
                   Home
                 </button>
 
+                {/* About */}
                 <a
                   href="#about"
-                  className="block font-bold text-black hover:text-blue-600"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setIsCompaniesOpen(false);
+                  }}
+                  className="block px-3 py-2 rounded-md font-semibold text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition"
                 >
                   About
                 </a>
 
-                <div className="space-y-2">
+                {/* Companies Dropdown */}
+                <div className="space-y-1">
                   <button
                     onClick={() => setIsCompaniesOpen(!isCompaniesOpen)}
-                    className="flex justify-between w-full font-bold text-black hover:text-blue-600"
+                    className="flex items-center justify-between w-full px-3 py-2 rounded-md font-semibold text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition"
                   >
                     Companies
-                    <span>{isCompaniesOpen ? "▲" : "▼"}</span>
+                    <span className="text-sm">{isCompaniesOpen ? "▲" : "▼"}</span>
                   </button>
 
                   <AnimatePresence>
@@ -191,13 +204,19 @@ const Navigation: React.FC = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="pl-4 space-y-2 gpu-boost"
+                        transition={{ duration: 0.25 }}
+                        className="pl-3 space-y-1"
                       >
                         {companies.map((company, index) => (
                           <Link
                             key={index}
                             to={company.path}
-                            className="block text-sm font-bold text-black hover:text-blue-600"
+                            onClick={() =>{
+                            setIsMobileMenuOpen(false);
+                            setIsCompaniesOpen(false);
+                            handleNavigation(company.path);  
+                            }}
+                            className="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition"
                           >
                             {company.name}
                           </Link>
@@ -207,9 +226,14 @@ const Navigation: React.FC = () => {
                   </AnimatePresence>
                 </div>
 
+                {/* Contact */}
                 <a
                   href="#contact"
-                  className="block font-bold text-black hover:text-blue-600"
+                  onClick={() =>{
+                     setIsMobileMenuOpen(false);
+                     setIsCompaniesOpen(false);
+                  }}
+                  className="block px-3 py-2 rounded-md font-semibold text-gray-800 hover:bg-blue-50 hover:text-blue-600 transition"
                 >
                   Contact
                 </a>
@@ -217,6 +241,8 @@ const Navigation: React.FC = () => {
             </motion.div>
           )}
         </AnimatePresence>
+
+
       </div>
       <div className="hidden bg-blue-600 bg-purple-600 bg-green-600 bg-orange-600 bg-yellow-600" />
     </motion.nav>

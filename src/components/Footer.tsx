@@ -12,7 +12,7 @@ interface FooterProps {
 }
 
 const companyNumbers: Record<CompanyKey, string[]> = {
-  home: ['+91 8122842482'],
+  home: ['+91 9626296856','+91 9962900424'],
   career: ['+91 8122842482', '+044-42697264'],
   marketing: ['+91 8939540201'],
   speech: ['+91 7305969724', '+044-48067961'],
@@ -55,11 +55,11 @@ const Footer: React.FC<FooterProps> = ({ company }) => {
               Transforming lives through comprehensive services spanning career solutions, Ads & Digital marketing,
               therapy services, sports programs, and enriching experiences for special children.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 ">
               <a href="#" className="w-10 h-10 bg-pink-600 rounded-lg flex items-center justify-center hover:bg-pink-700 transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="https://chat.whatsapp.com/L8kfoF42zgnDhlQp7fbD7s" className="w-10 h-10 bg-blue-400 rounded-lg flex items-center justify-center hover:bg-blue-500 transition-colors">
+              <a href="https://chat.whatsapp.com/L8kfoF42zgnDhlQp7fbD7s" className="w-10 h-10 bg-green-400 rounded-lg flex items-center justify-center hover:bg-green-500 transition-colors">
                 <FaWhatsapp className="w-5 h-5" />
               </a>
               <a href="#" className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors">
@@ -117,7 +117,7 @@ const Footer: React.FC<FooterProps> = ({ company }) => {
                   onClick={() => handleNavigation('/weekend-dayouts')}
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  Elite Weekend Dayouts
+                  Elite Weekend Outings
                 </button>
               </li>
             </ul>

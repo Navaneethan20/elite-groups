@@ -44,12 +44,12 @@ const companies = [
     image: 'https://images.pexels.com/photos/296301/pexels-photo-296301.jpeg'
   },
   {
-    name: 'Elite Weekend Dayouts',
+    name: 'Elite Weekend Outings',
     description: 'Safe and engaging weekend outings designed for special children.',
     path: '/weekend-dayouts',
     icon: Calendar,
     color: 'from-yellow-600 to-yellow-700',
-    image: 'https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg'
+    image: 'https://img.freepik.com/free-photo/kid-playing-with-paper-plane_23-2151582205.jpg'
   }
 ];
 
@@ -158,15 +158,7 @@ const navigate = useNavigate();
             </div>
           </motion.div>
         </div>
-        <a
-          href="https://chat.whatsapp.com/L8kfoF42zgnDhlQp7fbD7s"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="fixed bottom-10 right-8 bg-green-500 font-semibold text-balck rounded-full px-5 py-4 shadow-lg flex items-center gap-2 hover:bg-green-600 border border-black transition-all z-50"
-        >
-            <img src="whatsapp.svg" className="w-6 h-6" />
-          Join Group
-        </a>
+        
       </section>
 
       {/* Arrow Down Effect */}
@@ -266,7 +258,7 @@ const navigate = useNavigate();
             transition={{ duration: 0.6 }}
             className="text-center mb-16 gpu-boost"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-5xl  md:text-5xl font-bold text-white mb-6">
               Our Companies
             </h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
@@ -284,7 +276,7 @@ const navigate = useNavigate();
               hidden: {},
               visible: { transition: { staggerChildren: 0.15 } }
             }}
-            className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {companies.map((company, index) => {
               const IconComponent = company.icon;
@@ -300,7 +292,7 @@ const navigate = useNavigate();
                        hover:shadow-2xl transition-transform duration-300 
                        hover:-translate-y-2 gpu-boost"
                 >
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-24 sm:h-48 md:h-64 overflow-hidden">
                     <img loading="lazy"
                       src={company.image}
                       alt={company.name}
@@ -317,11 +309,11 @@ const navigate = useNavigate();
                     </div>
                   </div>
 
-                  <div className="p-8">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  <div className="p-4 sm:p-6 lg:p-8">
+                    <h3 className="text-lg  font-bold text-gray-900 mb-4">
                       {company.name}
                     </h3>
-                    <p className="text-gray-600 mb-6">{company.description}</p>
+                    <p className="text-gray-700 text-sm mb-6">{company.description}</p>
                     <Link
                       onClick={() => handleNavigation(company.path)}
                       to={company.path}
@@ -418,11 +410,11 @@ const navigate = useNavigate();
             {[
               {
                 question: "What services does Elite Groupz offer?",
-                answer: "Elite Groupz offers comprehensive services through five specialized companies: career solutions, Ads & Digital marketing, speech and hearing therapy, sports programs for special children, and weekend dayouts."
+                answer: "Elite Groupz offers comprehensive services through five specialized companies: career solutions, Ads & Digital marketing, speech and hearing therapy, sports programs for special children, and Weekend Outings."
               },
               {
                 question: "Are the programs suitable for children with special needs?",
-                answer: "Yes, three of our companies (Elite Speech & Hearing Centre, Elite Sports Academy, and Elite Weekend Dayouts) are specifically designed for children with special needs, providing inclusive and supportive environments."
+                answer: "Yes, three of our companies (Elite Speech & Hearing Centre, Elite Sports Academy, and Elite Weekend Outings) are specifically designed for children with special needs, providing inclusive and supportive environments."
               },
               {
                 question: "How can I get started with Elite Career Solutions?",
@@ -482,8 +474,8 @@ const navigate = useNavigate();
                 </div>
                 <div>
                   <h3 className="font-semibold">Phone</h3>
-                  <p className="text-gray-300">+91  <a href={`tel:${8122842482}`} className="text-gray-300 hover:text-white">
-                    {8122842482}
+                  <p className="text-gray-300">+91  <a href={`tel:${9626296856}`} className="text-gray-300 hover:text-white">
+                    {9626296856}
                   </a></p>
                 </div>
               </div>
@@ -569,7 +561,7 @@ const navigate = useNavigate();
                   <option value="digital marketing">Elite Ads & Digital marketing</option>
                   <option value="speech & hearing">Elite Speech & Hearing Centre</option>
                   <option value="sports academy">Elite Sports Academy</option>
-                  <option value="weekend dayouts">Elite Weekend Dayouts</option>
+                  <option value="Weekend Outings">Elite Weekend Outings</option>
                 </select>
                 <textarea
                   name="message"

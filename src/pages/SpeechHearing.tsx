@@ -1,10 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Heart, Ear, MessageCircle, Users, Brain, 
+import {
+  Heart, Ear, MessageCircle, Users, Brain,
   Award, BookOpen, Activity, Stethoscope, Smile
 } from 'lucide-react';
 import Footer from '../components/Footer';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const SpeechHearing: React.FC = () => {
   return (
@@ -15,7 +16,7 @@ const SpeechHearing: React.FC = () => {
           <div className="absolute top-10 right-10 w-64 h-64 bg-teal-400/20 rounded-full blur-xl"></div>
           <div className="absolute bottom-10 left-10 w-96 h-96 bg-green-400/20 rounded-full blur-2xl"></div>
         </div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -27,45 +28,45 @@ const SpeechHearing: React.FC = () => {
               <div className="w-32 h-18 bg-gradient-to-r from-green-600 to-teal-600 rounded-xl flex items-center justify-center mb-8">
                 <img src='\ELITE SPEECH AND HEARING CENTRE LOGO.jpg' alt='Logo' className="w-32 h-18 object-contain rounded-xl" />
               </div>
-              
+
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
                 Elite Speech &
                 <span className="block text-teal-400">Hearing Centre</span>
               </h1>
               <p className="text-xl text-green-100 mb-8">
-                Dedicated to helping children overcome speech, language, and hearing challenges 
+                Dedicated to helping children overcome speech, language, and hearing challenges
                 through compassionate care and evidence-based therapy.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-row sm:flex-row gap-4">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 2.5 }}
                 >
                 </motion.div>
-                <a 
-                  href="#about" 
+                <a
+                  href="#about"
                   className="px-8 py-4 bg-white text-green-800 rounded-lg font-semibold hover:bg-gray-100 transition-colors transition-all transform hover:scale-105 hover:shadow-lg cursor-pointerr"
                 >
                   Our Services
                 </a>
-                <a 
-                  href="#contact" 
+                <a
+                  href="#contact"
                   className="px-8 py-4 bg-white/10 bg-white/30 text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 transform hover:scale-105 hover:shadow-lg cursor-pointer"
                 >
                   Book Assessment
                 </a>
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <img 
-                src="https://images.pexels.com/photos/8535230/pexels-photo-8535230.jpeg" 
+              <img
+                src="https://images.pexels.com/photos/8535230/pexels-photo-8535230.jpeg"
                 alt="Speech Therapy"
                 className="w-full h-96 object-cover rounded-2xl shadow-2xl"
               />
@@ -73,6 +74,18 @@ const SpeechHearing: React.FC = () => {
             </motion.div>
           </div>
         </div>
+        <a
+          href="https://chat.whatsapp.com/L8kfoF42zgnDhlQp7fbD7s"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-10 right-8 bg-green-500 font-semibold text-black rounded-full px-5 py-4 shadow-lg flex items-center gap-2 hover:bg-green-600 border border-black transition-all z-50 sm:px-5 sm:py-4 sm:text-base sm:gap-2
+             px-3 py-2 text-sm gap-1 sm:shadow-lg"
+        >
+            <FaWhatsapp size={24} />
+            <span className="hidden sm:inline">
+              Join Group
+            </span>
+        </a>
       </section>
 
       {/* Services Section */}
@@ -175,10 +188,10 @@ const SpeechHearing: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-black mb-6">Conditions We Specialize In</h2>
-            <p className="text-xl text-black max-w-3xl mx-auto">
+            <h2 className="text-5xl font-bold text-black mb-6">Conditions We Specialize In</h2>
+            <p className="text-xl font-semibold text-black max-w-3xl mx-auto">
               Our expert therapists provide specialized care for a wide range of speech, language, and hearing conditions.
-            </p>  
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -212,8 +225,8 @@ const SpeechHearing: React.FC = () => {
                 className="group cursor-pointer"
               >
                 <div className="relative overflow-hidden rounded-xl mb-4">
-                  <img 
-                    src={condition.image} 
+                  <img
+                    src={condition.image}
                     alt={condition.title}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
@@ -222,7 +235,7 @@ const SpeechHearing: React.FC = () => {
                     <h3 className="text-lg font-bold">{condition.title}</h3>
                   </div>
                 </div>
-                <p className="text-black text-sm">{condition.description}</p>
+                <p className="text-black font-semibold text-sm">{condition.description}</p>
               </motion.div>
             ))}
           </div>
@@ -305,11 +318,12 @@ const SpeechHearing: React.FC = () => {
           >
             <h2 className="text-4xl font-bold mb-6">Start Your Child's Journey to Better Communication</h2>
             <p className="text-xl text-green-100 mb-8">
-              Take the first step towards improving your child's speech, language, and hearing abilities. 
+              Take the first step towards improving your child's speech, language, and hearing abilities.
               Schedule a comprehensive assessment with our expert therapists today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href='mailto:elitespeechhearingcentre@gmail.com?subject=Book%20Assessment' className="px-8 py-4 bg-white text-green-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
+              <a href='https://wa.me/7305969724?text=I%20want%20to%20book%20an%20assessment' className="px-8 py-4 bg-white text-green-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
+                <FaWhatsapp className="inline-block mr-2 w-6 h-6" />
                 Book Assessment
               </a>
               <a href='tel:7305969724' className="px-8 py-4 bg-white/10 bg-white/30 text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer">

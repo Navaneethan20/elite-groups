@@ -5,6 +5,7 @@ import {
   Award, Zap, Smile,  Star
 } from 'lucide-react';
 import Footer from '../components/Footer';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const SportsAcademy: React.FC = () => {
   return (
@@ -36,7 +37,7 @@ const SportsAcademy: React.FC = () => {
                 Empowering special children through inclusive sports programs that promote physical, 
                 mental, and social development in a supportive environment.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-row sm:flex-row gap-4">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -73,6 +74,18 @@ const SportsAcademy: React.FC = () => {
             </motion.div>
           </div>
         </div>
+        <a
+          href="https://chat.whatsapp.com/L8kfoF42zgnDhlQp7fbD7s"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-10 right-8 bg-green-500 font-semibold text-black rounded-full px-5 py-4 shadow-lg flex items-center gap-2 hover:bg-green-600 border border-black transition-all z-50 sm:px-5 sm:py-4 sm:text-base sm:gap-2
+             px-3 py-2 text-sm gap-1 sm:shadow-lg"
+        >
+            <FaWhatsapp size={24} />
+            <span className="hidden sm:inline">
+              Join Group
+            </span>
+        </a>
       </section>
 
       {/* Programs Section */}
@@ -382,7 +395,8 @@ const SportsAcademy: React.FC = () => {
               Join our supportive community today!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href='mailto:elitesportsacademyheadoffice@gmail.com?subject=Enroll Your Child' className="px-8 py-4 bg-white text-orange-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
+              <a href='https://wa.me/9791007729?text=I%20want%20to%20enroll%20my%20child' className="px-8 py-4 bg-white text-orange-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
+                <FaWhatsapp className="w-6 h-6 inline-block mr-2 " />
                 Enroll Your Child
               </a>
               <a href='tel:9705465342' className="px-8 py-4 bg-white/10 bg-white/30 text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer">
