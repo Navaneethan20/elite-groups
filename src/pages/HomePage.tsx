@@ -1,4 +1,6 @@
-import React from 'react';
+"use client";
+import React, { useRef } from "react";
+import emailjs from "emailjs-com";
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
@@ -52,6 +54,32 @@ const companies = [
 ];
 
 const HomePage: React.FC = () => {
+
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!form.current) return;
+
+    emailjs
+      .sendForm(
+        "service_6e0k69a",   // 👈 replace with your EmailJS Service ID
+        "template_kzpioqu",  // 👈 replace with your Template ID
+        form.current,
+        "IOkjwU2XYn-lTl6Wh"    // 👈 replace with your Public Key
+      )
+      .then(
+        () => {
+          alert("Message sent successfully ✅");
+          form.current?.reset(); // reset form after submit
+        },
+        (error) => {
+          alert("Failed to send ❌ " + error.text);
+        }
+      );
+  };
+
   return (
     <div className="bg-white">
       {/* Hero Section */}
@@ -75,13 +103,12 @@ const HomePage: React.FC = () => {
               className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 mb-6 drop-shadow-2xl pb-3 hover:drop-shadow-2xl transition-all"
             >
               <Typewriter
-                words={['Empowering Lives Through Excellence', 'Elite Groups']}
-                loop={Infinity}
+                words={['Empowering Lives Through Excellence', 'Elite Groupz']}
+                loop={Infinity} 
                 cursor
                 cursorStyle="|"
                 cursorColor="#ffffff"
                 typeSpeed={100}
-                deleteSpeed={70}
                 delaySpeed={3000}
               />
             </h1>
@@ -120,6 +147,15 @@ const HomePage: React.FC = () => {
             </div>
           </motion.div>
         </div>
+        <a
+          href="https://chat.whatsapp.com/L8kfoF42zgnDhlQp7fbD7s"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-10 right-8 bg-green-500 font-semibold text-balck rounded-full px-5 py-4 shadow-lg flex items-center gap-2 hover:bg-green-600 border border-black transition-all z-50"
+        >
+            <img src="whatsapp.svg" className="w-6 h-6" />
+          Join Group
+        </a>
       </section>
 
       {/* Arrow Down Effect */}
@@ -145,10 +181,10 @@ const HomePage: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              About Elite Groups
+              About Elite Groupz
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              Elite Groups is a diversified organization committed to transforming lives through innovative services
+              Elite Groupz is a diversified organization committed to transforming lives through innovative services
               and inclusive solutions. Our portfolio spans multiple industries, each designed to address unique needs
               with excellence and compassion.
             </p>
@@ -198,7 +234,7 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Companies Section */}
-      <section id="companies" className="py-12 sm:py-16 md:py-20 bg-white relative overflow-hidden">
+      <section id="companies" className="py-20 bg-white relative overflow-hidden">
         {/* Background Video */}
         <video
           className="absolute inset-0 w-full h-full object-cover z-0"
@@ -216,12 +252,12 @@ const HomePage: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12 sm:mb-16"
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Our Companies
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-white max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               Discover our diverse portfolio of specialized companies, each dedicated to excellence in their respective fields.
             </p>
           </motion.div>
@@ -237,7 +273,7 @@ const HomePage: React.FC = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="group bg-white/50 backdrop-blur-md rounded-2xl  shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
                 >
-                  <div className="relative h-40 sm:h-48 md:h-64 overflow-hidden">
+                  <div className="relative h-64 overflow-hidden">
                     <img
                       src={company.image}
                       alt={company.name}
@@ -347,8 +383,8 @@ const HomePage: React.FC = () => {
           <div className="space-y-4">
             {[
               {
-                question: "What services does Elite Groups offer?",
-                answer: "Elite Groups offers comprehensive services through five specialized companies: career solutions, Ads & Digital marketing, speech and hearing therapy, sports programs for special children, and weekend dayouts."
+                question: "What services does Elite Groupz offer?",
+                answer: "Elite Groupz offers comprehensive services through five specialized companies: career solutions, Ads & Digital marketing, speech and hearing therapy, sports programs for special children, and weekend dayouts."
               },
               {
                 question: "Are the programs suitable for children with special needs?",
@@ -424,7 +460,7 @@ const HomePage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <p className="text-gray-300"><a href='mailto:elitecareersolutions02@gmail.com' className="text-gray-300 hover:text-white">elitecareersolutions02@gmail.com</a></p>
+                  <p className="text-gray-300"><a href='mailto:elitegroupz58@gmail.com' className="text-gray-300 hover:text-white">elitegroupz58@gmail.com</a></p>
                 </div>
               </div>
 
@@ -445,7 +481,7 @@ const HomePage: React.FC = () => {
               <div className="mt-8">
                 <div className="w-full h-64 bg-gray-800 rounded-lg overflow-hidden">
                   <iframe
-                    title="Elite Groups Location"
+                    title="Elite Groupz Location"
                     src="https://www.google.com/maps?q=No:10, Harini Complex 3rd Floor, Bharathidasan Street, Valasaravakkam, Chennai, Tamil Nadu 600087&output=embed"
                     width="100%"
                     height="100%"
@@ -465,38 +501,44 @@ const HomePage: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="bg-gray-800 p-8 rounded-xl"
             >
-              <form className="space-y-6">
+              <form ref={form} onSubmit={sendEmail} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <input
+                    name="first_name"
                     type="text"
                     placeholder="First Name"
                     className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
                   />
                   <input
+                    name="last_name"
                     type="text"
                     placeholder="Last Name"
                     className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
                   />
                 </div>
                 <input
+                  name="user_email"
                   type="email"
                   placeholder="Email Address"
                   className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
                 />
                 <input
+                  name="phone"
                   type="tel"
                   placeholder="Phone Number"
                   className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
                 />
-                <select className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 transition-colors">
+                <select name="service"
+                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 transition-colors">
                   <option value="">Select Service Interest</option>
-                  <option value="career">Elite Career Solutions</option>
-                  <option value="digital">Elite Ads & Digital marketing</option>
-                  <option value="speech">Elite Speech & Hearing Centre</option>
-                  <option value="sports">Elite Sports Academy</option>
-                  <option value="dayouts">Elite Weekend Dayouts</option>
+                  <option value="career solutions">Elite Career Solutions</option>
+                  <option value="digital marketing">Elite Ads & Digital marketing</option>
+                  <option value="speech & hearing">Elite Speech & Hearing Centre</option>
+                  <option value="sports academy">Elite Sports Academy</option>
+                  <option value="weekend dayouts">Elite Weekend Dayouts</option>
                 </select>
                 <textarea
+                  name="message"
                   placeholder="Your Message"
                   rows={4}
                   className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 transition-colors resize-none"
@@ -512,7 +554,7 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-      <Footer company="career" />
+      <Footer company="home" />
     </div>
   );
 };

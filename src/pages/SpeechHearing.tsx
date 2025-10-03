@@ -175,8 +175,8 @@ const SpeechHearing: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl font-bold text-black mb-6">Conditions We Specialize In</h2>
-            <p className="text-2xl text-black max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-black mb-6">Conditions We Specialize In</h2>
+            <p className="text-xl text-black max-w-3xl mx-auto">
               Our expert therapists provide specialized care for a wide range of speech, language, and hearing conditions.
             </p>  
           </motion.div>
@@ -222,7 +222,7 @@ const SpeechHearing: React.FC = () => {
                     <h3 className="text-lg font-bold">{condition.title}</h3>
                   </div>
                 </div>
-                <p className="text-black text-xl">{condition.description}</p>
+                <p className="text-black text-sm">{condition.description}</p>
               </motion.div>
             ))}
           </div>

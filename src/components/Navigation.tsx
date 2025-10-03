@@ -192,10 +192,6 @@ const Navigation: React.FC = () => {
                             key={index}
                             to={company.path}
                             className="block text-sm font-bold text-black hover:text-blue-600"
-                            onClick={() => {
-                                  setIsMobileMenuOpen(false); // ✅ close menu
-                                  setIsCompaniesOpen(false); // optional: collapse dropdown too
-                          }}
                           >
                             {company.name}
                           </Link>

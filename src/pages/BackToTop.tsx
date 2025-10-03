@@ -5,30 +5,21 @@ export default function BackToTop() {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      setVisible(window.scrollY > 200);
+      if (window.scrollY > 200) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
     };
     window.addEventListener("scroll", toggleVisibility);
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
   return (
-    <div
-      className={`
-        fixed bottom-6 left-6 
-        transition-opacity duration-500 
-        ${visible ? "opacity-50" : "opacity-0 pointer-events-none"}
-      `}
-    >
+    visible && (
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="
-          p-2 sm:p-3 md:p-4 rounded-full 
-          bg-gray-500 text-white 
-          shadow-lg border border-gray-300 
-          hover:bg-gray-600 
-          transition-all cursor-pointer 
-          flex items-center justify-center
-        "
+        className="fixed bottom-10 left-10 p-3 rounded-full backdrop-blur-md bg-white/20 border border-white/30 shadow-lg hover:bg-white/30 transition-all cursor-pointer flex items-center justify-center"
         aria-label="Back to top"
       >
         {/* Arrow Up Icon */}
@@ -38,11 +29,11 @@ export default function BackToTop() {
           viewBox="0 0 24 24"
           strokeWidth="2"
           stroke="currentColor"
-          className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5"
-        >
+          className="w-6 h-6 text-white"
+        > 
           <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
-        </svg>
+        </svg><p className="text-white font-semibold">   Back To Top</p>
       </button>
-    </div>
+    )
   );
 }
