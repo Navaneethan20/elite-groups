@@ -48,32 +48,41 @@ const Navigation: React.FC = () => {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/50 backdrop-blur-lg shadow-lg shadow-black/10' : 'bg-transparent'
+      className={`fixed  top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/50 pb-7 backdrop-blur-lg shadow-lg shadow-black/10' : 'bg-transparent'
         }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-14">
           {/* Logo */}
           <div
          className="flex items-center space-x-3 cursor-pointer"
             onClick={handleHomeClick}
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-teal-600 rounded-lg flex items-center justify-center">
-              <Building2 className="w-6 h-6 text-white" />
+            
+            <div className="flex justify-center items-center gap-8 mt-20 mb-12">
+              <div className='bg-black/30 w-18 h-18 rounded-lg border-2 border-yellow-400 hover:border-yellow-600'>
+              <motion.img
+                src="/Logo.png"
+                alt="EliteGroupz Logo"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+                whileHover={{ scale: 1.08 }}
+                className="w-14 h-14 drop-shadow-[0_0_15px_rgba(255,215,0,0.6)] animate-pulse"
+              />
+              </div>
             </div>
 
-            {/* <img src='\ELITE HOME.jpg' alt='Logo' className="w-16 h-16 object-contain rounded-xl"></img> */}
-            
-            <span className={`text-2xl font-bold transition-colors ${scrolled ? 'text-black' : 'text-white'} hover:text-blue-600`}>
+            <span className={`text-2xl mt-7 font-bold transition-colors ${scrolled ? 'text-black' : 'text-white'} hover:text-blue-600`}>
               Elite Groupz
             </span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 mt-8">
             <button
               onClick={handleHomeClick}
               className={`font-bold text-xl transition-colors hover:text-blue-600 ${scrolled ? 'text-black' : 'text-white'
@@ -141,7 +150,7 @@ const Navigation: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600"
+            className="md:hidden p-2 mt-8 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (

@@ -166,7 +166,7 @@ const navigate = useNavigate();
         initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: 1, y: [0, 20, 0] }}
         transition={{ duration: 1.5, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        className="absolute bottom-8 left-1/2 transform translate-x-[-50%] z-10"
       >
         <a href="#about" aria-label="Scroll Down">
           <ChevronDown className="w-12 h-12 text-white drop-shadow-lg animate-bounce" />
@@ -330,7 +330,6 @@ const navigate = useNavigate();
         </div>
       </section>
 
-
       {/* Reviews Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -389,6 +388,83 @@ const navigate = useNavigate();
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section
+        id="leadership"
+        className="py-20 bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white"
+      >
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center "
+          >
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold mb-16 tracking-wide"
+          >
+            Our Leadership Team
+          </motion.h2>
+
+          <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-12 md:gap-20">
+            {/* Sunitha K */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="max-w-sm text-center md:text-left"
+            >
+              <h3 className="text-2xl font-semibold mb-2">Sunitha K</h3>
+              <p className="text-blue-300  font-medium mb-3">Founder</p>
+              <p className="text-white leading-relaxed">
+                As the Founder of EliteGroupz, Sunitha established the vision and values
+                that drive the company’s excellence, innovation, and client trust. She
+                continues to guide the overall mission and long-term strategy.
+              </p>
+            </motion.div>
+
+            {/* Azarudeen M */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="max-w-sm text-center md:text-left"
+            >
+              <h3 className="text-2xl font-semibold mb-2">Azarudeen M</h3>
+              <p className="text-blue-300 font-medium mb-3">Chief Executive Officer</p>
+              <p className="text-white leading-relaxed">
+                As CEO, Azarudeen leads EliteGroupz’s overall operations, strategic
+                planning, and growth initiatives. He focuses on building strong teams
+                and expanding the brand’s impact across industries.
+              </p>
+            </motion.div>
+
+            {/* Mathew David Raju */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="max-w-sm text-center md:text-left"
+            >
+              <h3 className="text-2xl font-semibold mb-2">Mathew David Raju</h3>
+              <p className="text-blue-300 font-medium mb-3">Managing Director</p>
+              <p className="text-white leading-relaxed">
+                As Managing Director, Mathew oversees all key business divisions,
+                ensuring excellence in execution and innovation in every project. His
+                leadership strengthens the company’s operational and client success.
+              </p>
+            </motion.div>
+          </div>
+          </motion.div>
         </div>
       </section>
 

@@ -37,7 +37,7 @@ const SpeechHearing: React.FC = () => {
                 Dedicated to helping children overcome speech, language, and hearing challenges
                 through compassionate care and evidence-based therapy.
               </p>
-              <div className="flex flex-row sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -322,7 +322,7 @@ const SpeechHearing: React.FC = () => {
               Schedule a comprehensive assessment with our expert therapists today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href='https://wa.me/7305969724?text=I%20want%20to%20book%20an%20assessment' className="px-8 py-4 bg-white text-green-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
+              <a href='https://wa.me/7305969724?text=I%20want%20to%20book%20an%20assessment' target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-white text-green-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
                 <FaWhatsapp className="inline-block mr-2 w-6 h-6" />
                 Book Assessment
               </a>

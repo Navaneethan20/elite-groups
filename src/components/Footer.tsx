@@ -1,8 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Building2, Phone, Mail, MapPin, Facebook, Linkedin, Instagram, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import {Link} from 'react-router-dom';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaWhatsapp, FaYoutube } from 'react-icons/fa';
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></link>
 
 type CompanyKey = 'home'|'career' | 'marketing' | 'speech' | 'sports' | 'weekend';
@@ -45,9 +46,17 @@ const Footer: React.FC<FooterProps> = ({ company }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-teal-600 rounded-lg flex items-center justify-center">
-                <Building2 className="w-6 h-6 text-white" />
+            <div className="flex items-center space-x-3 mb-6 cursor-pointer" onClick={() => handleNavigation('/')}>
+              <div className='bg-black/30 w-18 h-18 rounded-lg border-2 border-yellow-400 hover:border-yellow-600'>
+              <motion.img
+                src="/Logo.png"
+                alt="EliteGroupz Logo"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+                whileHover={{ scale: 1.08 }}
+                className="w-14 h-14 drop-shadow-[0_0_15px_rgba(255,215,0,0.6)] animate-pulse"
+              />
               </div>
               <span className="text-2xl font-bold">Elite Groupz</span>
             </div>
@@ -56,17 +65,17 @@ const Footer: React.FC<FooterProps> = ({ company }) => {
               therapy services, sports programs, and enriching experiences for special children.
             </p>
             <div className="flex space-x-4 ">
-              <a href="#" className="w-10 h-10 bg-pink-600 rounded-lg flex items-center justify-center hover:bg-pink-700 transition-colors">
-                <Instagram className="w-5 h-5" />
+              <a href="https://www.instagram.com/elitegroupz" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-pink-600 rounded-lg flex items-center justify-center hover:bg-pink-700 transition-colors">
+                <FaInstagram className="w-5 h-5" />
               </a>
-              <a href="https://chat.whatsapp.com/L8kfoF42zgnDhlQp7fbD7s" className="w-10 h-10 bg-green-400 rounded-lg flex items-center justify-center hover:bg-green-500 transition-colors">
+              <a href="https://chat.whatsapp.com/L8kfoF42zgnDhlQp7fbD7s" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-green-400 rounded-lg flex items-center justify-center hover:bg-green-500 transition-colors">
                 <FaWhatsapp className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors">
-                <Facebook className="w-5 h-5" />
+              <a href="https://youtube.com/@elitegroupz02" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-red-700 rounded-lg flex items-center justify-center hover:bg-red-800 transition-colors">
+                <FaYoutube className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center hover:bg-blue-800 transition-colors">
-                <Linkedin className="w-5 h-5" />
+              <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors">
+                <FaFacebook className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -132,7 +141,7 @@ const Footer: React.FC<FooterProps> = ({ company }) => {
                 {companyNumbers[company].map((number, idx) => (
                   <div key={idx} className="flex items-center space-x-3 mb-2">
                     <Phone className="w-5 h-5 text-blue-400" />
-                    <a href={`tel:${number}`} className="text-gray-300 hover:text-white">
+                    <a href={`tel:${number}`} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
                       {number}
                     </a>
                   </div>
@@ -144,7 +153,7 @@ const Footer: React.FC<FooterProps> = ({ company }) => {
                 {companyMails[company].map((email, idx) => (
                   <div key={idx} className="flex items-center space-x-3 mb-2">
                     <Mail className="w-5 h-5 text-blue-400" />
-                    <a href={`mailto:${email}`} className="text-gray-300 hover:text-white">
+                    <a href={`mailto:${email}`} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
                       {email}
                     </a>
                   </div>
@@ -172,7 +181,7 @@ const Footer: React.FC<FooterProps> = ({ company }) => {
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link to="/privacy-policy" className="text-gray-300 hover:text-white text-sm transition-colors">Privacy Policy</Link>
               <Link to="/terms-of-service" className="text-gray-300 hover:text-white text-sm transition-colors">Terms of Service</Link>
-              <a href="/cookie-policy" className="text-gray-300 hover:text-white text-sm transition-colors">Cookie Policy</a>
+              <Link to="/cookie-policy" className="text-gray-300 hover:text-white text-sm transition-colors">Cookie Policy</Link>
             </div>
           </div>
         </div>

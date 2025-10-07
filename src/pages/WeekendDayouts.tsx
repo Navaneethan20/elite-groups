@@ -40,7 +40,7 @@ const WeekendDayouts: React.FC = () => {
                 and joyful outdoor adventures and enriching activities.
                 
               </p>
-              <div className="flex flex-row sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -387,7 +387,7 @@ const WeekendDayouts: React.FC = () => {
               <a href='mailto:eliteweekendouting@gmail.com?subject=Adventure%20Booking' className="px-8 py-4 bg-white text-yellow-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
                 Book Adventure
               </a>
-              <a href='https://wa.me/919705465342?text=Hello,I would like to view the schedule for weekend outing.' className="px-8 py-4 bg-white/10 bg-white/30 text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer">
+              <a href='https://wa.me/919705465342?text=Hello,I would like to view the schedule for weekend outing.' target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-white/10 bg-white/30 text-white rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 cursor-pointer">
                 <FaWhatsapp className="w-6 h-6 inline-block mr-2" />
                 View Schedule
               </a>

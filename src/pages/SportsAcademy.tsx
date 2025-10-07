@@ -395,7 +395,7 @@ const SportsAcademy: React.FC = () => {
               Join our supportive community today!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href='https://wa.me/9791007729?text=I%20want%20to%20enroll%20my%20child' className="px-8 py-4 bg-white text-orange-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
+              <a href='https://wa.me/9791007729?text=I%20want%20to%20enroll%20my%20child' target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-white text-orange-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer">
                 <FaWhatsapp className="w-6 h-6 inline-block mr-2 " />
                 Enroll Your Child
               </a>
