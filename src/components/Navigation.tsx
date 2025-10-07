@@ -64,14 +64,10 @@ const Navigation: React.FC = () => {
             
             <div className="flex justify-center items-center gap-8 mt-20 mb-12">
               <div className='bg-black/30 w-18 h-18 rounded-lg border-2 border-yellow-400 hover:border-yellow-600'>
-              <motion.img
+              <img
                 src="/Logo.png"
                 alt="EliteGroupz Logo"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
-                whileHover={{ scale: 1.08 }}
-                className="w-14 h-14 drop-shadow-[0_0_15px_rgba(255,215,0,0.6)] animate-pulse"
+                className="w-14 h-14 "
               />
               </div>
             </div>

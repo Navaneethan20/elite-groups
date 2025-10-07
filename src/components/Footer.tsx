@@ -48,15 +48,7 @@ const Footer: React.FC<FooterProps> = ({ company }) => {
           <div className="col-span-1 lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6 cursor-pointer" onClick={() => handleNavigation('/')}>
               <div className='bg-black/30 w-18 h-18 rounded-lg border-2 border-yellow-400 hover:border-yellow-600'>
-              <motion.img
-                src="/Logo.png"
-                alt="EliteGroupz Logo"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
-                whileHover={{ scale: 1.08 }}
-                className="w-14 h-14 drop-shadow-[0_0_15px_rgba(255,215,0,0.6)] animate-pulse"
-              />
+              <img src="/Logo.png" alt="EliteGroupz Logo" className="w-14 h-14 "/>
               </div>
               <span className="text-2xl font-bold">Elite Groupz</span>
             </div>
